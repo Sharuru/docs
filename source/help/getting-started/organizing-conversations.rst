@@ -1,83 +1,75 @@
-Organizing Conversations
+管理会话
 ======================================
 _____
 
-Channel Types
+频道种类
 -------------------------------------
-Channels are used to organize conversations across different topics. There are three types of channels: Public Channels, Private Channels, and Direct Messages.
 
-Public Channels
+频道被用来管理不同的主题. 目前具有的频道种类有: 公共频道, 私人频道以及私信.
+
+公共频道
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Public Channels are open to everyone on a team. New team members are automatically added to two Public Channels when they sign up: Town Square and Off-Topic.
+公共频道对团队里的所有人开放. 新加入的团队成员会自动加入默认的公共频道.
 
-Private Channels
+私人频道
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Private Channels are for sensitive topics and are only visible to select team members. Any member of a Private Channel can add additional members. Channel members can choose to leave at any time, but only the channel owner or `Team Admin <http://docs.mattermost.com/help/getting-started/managing-members.html#user-roles>`_ can remove other members.
+当讨论敏感话题时, 可以使用私人频道. 该频道只对选中的组员可见. 私人频道中的任何一个人都可以添加成员. 频道成员也可以选择在任何时候离开频道, 但是只有频道管理者可以移除其他组员.
 
-Direct Messages and Group Messages
+私信与群组消息
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Direct Messages are for conversations between two people. Group Messages are Direct Messages that have conversations among three or more people. Both are visible only to the people involved.
+两人之间进行的交流称之为私信. 群组消息是一群人的私信. 两者均只对参与人可见.
 
-Use a Direct Message when you want a private conversation with one other person. Use a Group Message when you want to quickly set up a conversation with up to seven other participants. If you want more than that, you must create a Private Channel.
+当你需要与另一位用户进行交流时, 你需要使用私信.
+当你需要与一群人快速分享信息的时候, 你可以使用群组信息.
+如果你需要更多, 那么你就得考虑私人频道了.
 
-If your System Administrator has allowed it, you can start a Direct Message or a Group Message with people on other teams, not just your own.
+在私信列表中会显示用户的在线状态: 在线(在线), 离开(五分钟内没有活动), 离线(离线).
 
-There is also an online status indicator next to the names in the Direct Message list. It displays: online (active browser), away (no browser activity for 5 minutes), and offline (browser closed).
-
-Managing Channels
+管理频道
 -----------------------------------------
-Channels can be created, joined, renamed, left and deleted.
+频道可以被创建, 加入, 重命名, 离开以及删除.
 
-Creating a Channel
+创建频道
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Create a new Public Channel or Private Channel by selecting the **+** symbol next to the *Channels* or *Private Channels* header on the left hand side. To start a direct message thread, click **More** at the bottom of the *Direct Messages* list to view a list of team members you can message.
+通过选择左侧的 *频道* 或 *私人频道* 标题旁边的 **+** 符号来创建新的公共频道或私人频道. 要发送私信, 请单击 *私信* 列表底部的 **更多**, 以查看可以发送消息的团队成员列表.
 
-Anyone can create Public Channels or Private Channels, unless the System Administrator has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-creation-for>`_.
+任何人都可以创建公共或私人频道, 除非管理员禁用了该项功能. 
 
-Joining a Channel
+加入频道
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Click **More** at the bottom of the *Channels* list to view a list of Public Channels you can join. To join a Private Channel you need to be added by a member of that channel.
+点击 *Channels* 列表底部的 **更多** 可查看你可以加入的公共频道列表. 要加入私人频道, 您需要由该频道的成员添加.
 
-Adding Members to a Channel
+将用户加入频道
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Click the channel name at the top of the center pane to access the drop-down menu, then click **Add Members**. Any member of a channel can add new members by clicking **Add** next to a user's name. Users already added to the channel will not appear in this modal.
+单击顶部的频道名称以访问下拉菜单，然后单击 **添加成员**. 频道的任何成员可以通过点击用户名旁边的 **添加** 来添加新成员. 已添加到频道的用户将不会显示在此窗口中.
 
-Removing Members from a Channel
+将用户移出频道
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Click the channel name at the top of the center pane to access the drop-down menu, then click **Manage Members**. Any member of a channel can remove other members by clicking **Remove** next to a user's name.
+单击顶部的频道名称以访问下拉菜单, 然后单击 **管理成员**. 频道的任何成员可以通过点击用户名旁边的 **删除** 来删除其他成员.
 
-Renaming a Channel
+重命名频道
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Click the channel name at the top of the center pane to access the drop-down menu, then click **Rename Channel**. Anyone can rename the channels they belong to, unless the System Administrator has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for>`_.
+单击顶部的通道名称以访问下拉菜单, 然后单击 **重命名通道**. 任何人都可以重命名他们所属的频道.
 
-You may also change the channel URL (also known as the channel handle) when renaming a channel. Changing channel URL may break existing links.
+你也可以在重命名频道时更改频道地址（也称为频道句柄）. 更改频道网址可能会破坏现有链接。
 
-Leaving a Channel
+离开频道
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Click the channel name at the top of the center pane to access the drop-down menu, then click **Leave Channel**. Any team member who leaves a Private Channel must be re-added by a channel member if they wish to rejoin. Team members will not receive mention notifications from channels of which they are not members.
+单击顶部的频道名称以访问下拉菜单, 然后单击 **离开通道**. 离开私人频道的任何团队成员如果希望重新加入, 必须由频道成员重新添加. 团队成员不会收到来自不是成员的频道的提及通知。
 
-Deleting a Channel
+删除频道
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Click the channel name at the top of the center pane to access the drop-down menu, then click **Delete Channel**. Anyone can delete the Public Channels or Private Channels they belong to, unless the System Administrator has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-deletion-for>`_.
+单击顶部的频道名称以访问下拉菜单, 然后单击 **删除通道**. 任何人都可以删除他们所属的公共频道或私人频道.
 
-When a channel is deleted it is removed from the user interface, but an archived copy exists on the server in case it is needed for audit reasons later. Because of this, the URL of a newly created channel cannot be the same URL name as a deleted channel.
+当一个频道被删除时, 它将从用户界面中删除, 但存档的副本存在于服务器上, 以备使用. 因此, 新创建的频道的URL不能与删除的频道具有相同的URL名称.
 
-Favoriting a Channel
+收藏频道
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+当你拥有较多的私信, 频道时, 收藏功能会相当好用. 
 
-Favorite channels are a great way to organize your sidebar by choosing which Channels, Private Channels, and Direct Messages are most important to you.
+可以通过如下方式将频道收藏:
 
-To mark a channel as a favorite, simply open the channel and then:
-
-**On desktop:** At the top of the page, click on the star next to the channel name
+**桌面端:** 在页面顶部, 单击频道名右侧的星星图标.
 
     .. image:: ../../images/favorite_channels_desktop.png
-       :scale: 35
-
-
-**On mobile:** Open the dropdown list by the channel name, and select "Add to Favorites"
-
-This will add the channel to a "Favorites" section in the top of the sidebar, so it's easy to access. To remove a channel from the "Favorites" section, click the star again on desktop or select "Remove from Favorites" on mobile.
-
-    .. image:: ../../images/favorite_channels_sidebar.png
        :scale: 35
