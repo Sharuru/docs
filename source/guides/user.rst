@@ -43,5 +43,5 @@ Mattermost 用户指南
    :titlesonly:
    :glob:
 
- 	/help/settings/account-settings.md
+ 	/help/mbp/checklist.md
 	
