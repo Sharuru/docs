@@ -1,109 +1,48 @@
-Configuring Notifications
+配置通知
 =========================
 
-Notifications in Mattermost alert you to unread messages and mentions.
+通知可以提醒你未读消息或者一些提及.
 
-Unreads and Mentions
+未读与提及
 ----------------------------------------
 
-Unread Messages Indicator
+未读信息指示
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The name of a channel in the left-hand sidebar shows as **bold** when
-there are unread messages in the channel. Clicking on the channel
-removes the bold indicator, and brings you to the earliest unread
-message in the channel.
+当有未读消息时, 左侧频道列表的频道名会 **加粗**. 单击频道后会移除该指示, 并自动跳转到第一条未读消息.
 
-You can choose not to show unread indicators in a channel by clicking
-**Channel Menu** > **Notification Preferences** > **Mark Channel
-Unread** and selecting **Only for mentions**. This will only notify you if a mention is triggered on your name or a
-keyword for which you're listening.
+你可以通过 **频道菜单** > **消息通知设置** > **标记未读** 来改变通知特性.
+设置成 **仅对提及** 将只对包含你的名字或你的关键字列表中的信息进行通知.
 
-Mentions Indicator
+提及指示
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mentions are triggered by `selected
-keywords <https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`__
-in a channel. Unread mentions are indicated by bold text and a mention counter next to
-the channel name in the left-hand sidebar.
+提及通知只会被关键字列表触发. 通知触发时, 频道列表会加粗. 同时, 会有一个提及计数器显示在边栏.
 
-Clicking the channel name removes the bolding and mention count. You can
-review your recent mentions by clicking **@** next to the search box
-at the top of the screen.
+单击频道后会移除该指示, 你可以通过单击搜索栏旁边的 **@** 图标来查看最近的提及信息.
 
-Learn more about `mentioning
-teammates <http://docs.mattermost.com/help/messaging/mentioning-teammates.html>`__.
-
-Email Notifications
+桌面通知
 -------------------------------------
 
-Emails are sent for any mentions you receive if you have Mattermost
-closed or have not had any browser activity for a short time.
+当 Mattermost 在启动状态下时, 默认情况下会对所有未读消息在屏幕一角进行气泡提醒. 仅有 Edge, Firefox, Safari, Chrome 以及 Mattermost 桌面应用支持这项特性
 
--  Turn email notifications On or Off in **Account Settings** >
-   **Notifications** > **Email Notifications**.
--  Configure the email address where notifications are sent in **Account
-   Settings** > **General** > **Email**.
+-  你可以通过 **用户设置** > **通知** > **桌面通知** > **发送桌面通知** 来配置全局特性.
+-  你可以通过 **频道菜单** > **消息通知设置** > **发送桌面通知**. 来配置针对频道的通知特性. 默认状态下, 频道设置沿用 **用户设置** 中的全局设置.
 
-Desktop Notifications
--------------------------------------
-
-These are browser notifications that appear in the corner of your main monitor for activity in channels you are not actively viewing. By default, these notifications are sent for all unread messages while Mattermost is open. Desktop notifications are available on Edge, Firefox, Safari, Chrome and `Mattermost Desktop Apps <https://about.mattermost.com/download/#mattermostApps>`_.
-
--  Configure when desktop notifications are sent from **Account
-   Settings** > **Notifications** > **Desktop Notifications** > **Send
-   Desktop Notifications**.
--  Configure channel specific desktop notifications from **Channel
-   Menu** > **Notification Preferences** > **Send Desktop
-   Notifications**. By default, all channels use the global setting
-   configured in *Account Settings*.
-   
-Notification Sounds
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-A notification sound plays for all activity that would fire a desktop
-notification. Notification sounds are available on IE11, Edge, Safari, Chrome and
-`Mattermost Desktop Apps <https://about.mattermost.com/download/#mattermostApps>`_.
-
--  Turn notification sounds On or Off in **Account Settings** >
-   **Notifications** > **Desktop Notification Sounds**.
--  Configure desktop notification triggers, sounds and duration in
-   **Account Settings** > **Notifications** > **Desktop Notifications**.
--  Configure channel specific desktop notifications from **Channel
-   Menu** > **Notification Preferences** > **Send Desktop
-   Notifications**. By default, all channels use the global setting
-   configured in *Account Settings*.
-
-Mobile Push Notifications
---------------------------------------------
-
-If the Mattermost Android or iOS app is installed, push notifications
-can be sent to your mobile device. By default, these notifications are
-sent for mentions in any channel or direct message channel that is not
-being viewed on desktop.
-
--  Configure when push notifications are sent from **Account Settings**
-   > **Notifications** > **Mobile Push Notifications** > **Send mobile
-   push notifications**.
--  Configure when push notifications are sent depending on your status
-   from **Account Settings** > **Notifications** > **Mobile Push
-   Notifications** > **Trigger push notifications when**.
-
-Team Sidebar Notifications
+团队边栏通知
 ----------------------------------------
 
-If you belong to more than one team, a team sidebar appears to the left of your channel list. It will inform you of unread messages and mentions across teams.
+如果你属于多个团队, 频道列表左侧的团队列表会显示信息通知.
 
-- Unread messages are denoted by a small dot left of the team icon.
-- Unread mentions are displayed with a mention counter that appears on the top right corner of the team icon.
+- 未读消息会以一个小点显示在团队图标左侧.
+- 未读提及会以一个计数器的形式显示在团队图标的右上角.
 
 .. image:: ../../images/team-sidebar-notifications.png
 
-Browser Tab Notifications
+浏览器选项卡通知
 ----------------------------------------
 
-If Mattermost is open in a browser tab the favicon updates to inform you of unread messages and
-mentions. Browser tab notifications are available on Firefox and Chrome.
+如果使用的是网页版的 Mattermost, 新通知会以 favicon 的形式进行展示, 该功能仅支持 Firefox 与 Chrome.
 
-- Unread messages are denoted by an asterisk (\*) next to the Mattermost icon.
-- Unread mentions are counted in brackets and incorporate mentions and direct messages from all of your teams.
+- 未读消息会在 Mattermost 图标旁显示星号 (\*) .
+- 未读提及会在括号内显示计数.
