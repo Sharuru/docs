@@ -35,4 +35,5 @@ Mattermost 用户指南
 
    /help/settings/account-settings.md
    /help/settings/checklist.md
+   /help/settings/special.md
 	
