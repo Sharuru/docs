@@ -2,7 +2,7 @@
 {# Ensure that all links found within the index.rst are transposed here as well. #}
 
 {%- extends "layout-notoc.html" %}
-{% set title = _('Mattermost Documentation') %}
+{% set title = _('Mattermost 文档') %}
 
 {% block body %}
 
@@ -167,42 +167,12 @@
     <div class="landing">
         <h1 class="landing-title">Mattermost Documentation</h1>
         <div class="landing-search" role="search">
-            <form id="rtd-search-form" class="wy-form" action="{{ pathto('search') }}" method="get">
-                <input type="text" name="q" placeholder="Search by keyword" autofocus />
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="default" />
-            </form>
         </div>
         <div class="tiles-flex">
-            <a class="tile" href="overview/index.html">
-                <h2 class="tile-title">Overview</h2>
-                <div class="tile-divider"></div>
-                <p class="tile-description">Features, security, deployment & integration.</p>
-            </a>
             <a class="tile" href="guides/user.html">
-                <h2 class="tile-title">User's Guide</h2>
+                <h2 class="tile-title">Mattermost 用户指南</h2>
                 <div class="tile-divider"></div>
-                <p class="tile-description">End user help and documentation</p>
-            </a>
-            <a class="tile" href="guides/administrator.html">
-                <h2 class="tile-title">Administrator's Guide</h2>
-                <div class="tile-divider"></div>
-                <p class="tile-description"> Installation, deployment & administration guides</p>
-            </a>
-            <a class="tile" href="guides/integration.html">
-                <h2 class="tile-title">Integration Guide</h2>
-                <div class="tile-divider"></div>
-                <p class="tile-description">Integrating other systems into messaging solution</p>
-            </a>
-            <a class="tile" href="guides/developer.html">
-                <h2 class="tile-title">Developer's Guide</h2>
-                <div class="tile-divider"></div>
-                <p class="tile-description">Contributing to the open source project</p>
-            </a>
-            <a class="tile" href="guides/core.html">
-                <h2 class="tile-title">Core Team Handbook</h2>
-                <div class="tile-divider"></div>
-                <p class="tile-description">Joining the Mattermost core team</p>
+                <p class="tile-description">用户使用指南</p>
             </a>
         </div>
     </div>

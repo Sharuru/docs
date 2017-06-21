@@ -1,9 +1,9 @@
-Mattermost User's Guide
+Mattermost 用户指南
 -----------------------
 
-End user help and documentation. 
+用户使用指南. 
 
-Getting Started
+开始使用
 ===============
 
 .. toctree::
@@ -14,28 +14,18 @@ Getting Started
    /help/getting-started/messaging-basics.md
    /help/getting-started/configuring-notifications.md
    /help/getting-started/organizing-conversations.md
-   /help/getting-started/searching.md
-   /help/getting-started/creating-teams.md
-   /help/getting-started/managing-members.md
-   /help/getting-started/organizing.rst
    /help/apps/desktop-guide.rst
 
-Messaging
+信息(待补完)
 =========
 
 .. toctree::
    :maxdepth: 2
    :glob:
 
-   /help/messaging/sending-messages.md
-   /help/messaging/reading-messages.md
-   /help/messaging/mentioning-teammates.md
-   /help/messaging/formatting-text.md
-   /help/messaging/attaching-files.rst
-   /help/messaging/executing-commands.md
-   /help/messaging/*
+	待补完
 
-Settings
+设置(待补完)
 ========
 
 .. toctree::
@@ -44,7 +34,14 @@ Settings
    :glob:
 
    /help/settings/account-settings.md
-   /help/settings/theme-colors.md
-   /help/settings/channel-settings.rst
-   /help/settings/team-settings.md
-   /help/settings/*
+
+快速检查单
+========
+
+.. toctree::
+   :maxdepth: 2
+   :titlesonly:
+   :glob:
+
+ 	/help/settings/account-settings.md
+	

@@ -4,7 +4,7 @@
    landing page.  Updates to this top-level item must also
    be transposed in the 'templates/index.html' file.
 
-Mattermost Documentation 
+Mattermost 文档
 ------------------------
 
 .. _`mattermost.org/download`: http://www.mattermost.org/download/
@@ -15,10 +15,5 @@ Mattermost Documentation
    :maxdepth: 1
    :glob:
 
-   Overview <overview/index>
-   User's Guide <guides/user>
-   Administrator's Guide <guides/administrator>
-   Integration Guide <guides/integration>
-   Developer's Guide <guides/developer>
-   Core Team Handbook <guides/core>
+   用户使用指南 <guides/user>
    
