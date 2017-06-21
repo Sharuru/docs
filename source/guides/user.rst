@@ -34,14 +34,5 @@ Mattermost 用户指南
    :glob:
 
    /help/settings/account-settings.md
-
-快速检查单
-========
-
-.. toctree::
-   :maxdepth: 2
-   :titlesonly:
-   :glob:
-
- 	/help/settings/checklist.md
+   /help/settings/checklist.md
 	

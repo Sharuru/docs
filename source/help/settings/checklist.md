@@ -1,6 +1,6 @@
-# TL;DR
+# 快速检查
 ___
-Too long Don't read...
+TL;DR
 
 ## 客户端安装
 
