@@ -1,93 +1,41 @@
-Using Mattermost Desktop App
+使用 Mattermost 桌面应用
 ============================
 
-Mattermost desktop applications are available for Windows, Mac and Linux operating systems.
+Mattermost 桌面应用程序可用于 Windows, Mac 和 Linux 操作系统.
 
-You can `download the apps directly from our download page <https://about.mattermost.com/downloads/>`_ and visit our `installation guides <https://docs.mattermost.com/install/desktop.html>`_ for help during setup and for troubleshooting tips.
+你可以 `直接下载客户端 <http://172.17.229.212:12450/mattermost-setup-3.7.0-win64.exe/>`_ 来安装.
 
-To view the latest updates, please see our `changelog <https://docs.mattermost.com/help/apps/desktop-changelog.html>`_.
+若安装时提示缺失 .NET 4.5, `请从这里下载安装 <http://172.17.229.212:12450/NDP452-KB2901907-x86-x64-AllOS-ENU.exe/>`_ .
 
-Below are a few tips to get you started and to configure your experience on the desktop app:
+同时提供 Chrome x64 V59, `请从这里下载安装 <http://172.17.229.212:12450/ChromeStandaloneSetup64_V59.exe/>`_ .
+
+
+以下是一些简单的提示方便快速配置客户端：
 
 .. contents::
     :backlinks: top
     :local:
 
-Server Management
+服务器管理
 -----------------
 
-You can connect to multiple Mattermost servers from a single interface on the desktop app. Servers appear as separate tabs while you are using the app.
+你可以通过一个客户端连接到多个 Mattermost 服务器, 服务器会以选项卡的形式在应用中分开显示.
 
-The Server Management section allows you to add, edit, and remove servers. 
+服务器管理选项允许你新增, 编辑, 移除服务器. 
 
-Adding Servers
+新增服务器
 ~~~~~~~~~~~~~~
 
-To access a new server from your desktop app environment:
+如果你需要连接到新的服务器:
 
-1. On the menu bar, go to **File > Settings**.
-2. In the *Server Management* section, click **Add new server**.
-3. In the **Name** field, enter the name that you want for the tab.
-4. In the **URL** field, enter the complete URL of the server that you want to connect to. Must begin with either ``http://`` or ``https://``.
-5. Click **Add**.
+1. 在菜单栏, 单击 **文件 > 设置**.
+2. 在 *服务器管理* 区域, 单击 **新增服务器**.
+3. 在 **名称** 输入框, 输入任意名称.
+4. 在 **URL** 输入框, 输入服务器地址, 必须以 ``http://`` 或 ``https://`` 开头.
+5. 单击 **新增**.
+6. 目前使用的服务器地址为: http://172.17.229.212:11000
 
-Editing Servers
-~~~~~~~~~~~~~~~
-
-To edit a server in your desktop app environment:
-
-1. On the menu bar, go to **File > Settings**.
-2. Next to the server you want to update, click **Edit**.
-3. Edit **Name** and/or **URL**.
-4. Click **Save**.
-
-Removing Servers
-~~~~~~~~~~~~~~~~
-
-To remove a server from your desktop app environment:
-
-1. On the menu bar, go to **File > Settings**.
-2. Next to the server or team that you want to remove, click **Remove**.
-3. Click **Remove**.
-
-App Options
+应用设置
 -----------
 
-In addition to `Mattermost Account Settings <https://docs.mattermost.com/help/settings/account-settings.html>`_ , the desktop app provides additional options to customize your experience.
-
-The options appear in the Settings page, available from the **File > Settings** or by CTRL/CMD+COMMA.
-
-Start app on login (Windows, Linux only)
-    When enabled, Mattermost application starts when you log in to your machine.
-
-    This setting is enabled by default.
-
-Check spelling
-    Highlight misspelled words in your messages. Available for English, French, German, Spanish, and Dutch. To change the spelling language, right-click inside a message box and navigate to **Spelling Languages** in the context menu.
-
-    This setting is enabled by default.
-
-Show red badge on taskbar icon to indicate unread messages (Windows, Mac only)
-    When enabled, a red badge is shown on the taskbar icon for unread messages with a number count indicating unread mentions or direct messages. If disabled, a red badge is only shown for unread mentions (with a number count).
-
-    This setting is enabled by default.
-
-Flash taskbar icon when a new message is received (Windows, Linux only)
-    Configure whether the taskbar icon flashes for a few messages when a new message is received on any of your active teams and servers.
-
-    This setting is disabled by default.
-
-Show Mattermost icon in the menu bar (Mac only)
-    When enabled, Mattermost icon is added to the Mac menu bar.
-
-    This setting is disabled by default.
-
-Show icon in the notification area (Linux only)
-    When enabled, Mattermost icon is added to the Linux notification area.
-
-    This setting is disabled by default.
-
-Leave app running in notification center when application window is closed (Linux only)
-    When enabled, closing the application window will leave the Mattermost desktop app running in your notification center. This can be useful if you want to check for unread mentions while away from the app.
-
-    This setting is disabled by default.
+你可以在 **文件 > 设置** 中设置应用设置.
