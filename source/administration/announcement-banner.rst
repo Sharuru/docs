@@ -1,7 +1,7 @@
 Announcement Banner (E10)
 =========================
 
-Available in `Enterprise Edition E10 and higher <https://about.mattermost.com/pricing/>`_.
+Available in `Enterprise Edition E10 and higher <https://about.mattermost.com/pricing/>`__.
 
 In Mattermost Enterprise Edition, an announcement banner is available that allows System Admins to display a notice that's visible to all users on the system.
 
@@ -14,7 +14,7 @@ By default, users can dismiss the banner until they log in again or until you up
 
 **To enable the banner**:
 
-1. In the CUSTOMIZATION section of the System Console, click **Announcement Banner**.
+1. In the CUSTOMIZATION section of the System Console, click **Announcement Banner** in prior versions or **System Console > Site Configuration** in versions after 5.12.
 2. In the *Enable Announcement Banner* section, click **true**.
 3. In the *Banner Text* field, enter the text of the announcement that you want to make.
 4. Set the background and text colors.

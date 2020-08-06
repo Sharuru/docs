@@ -13,17 +13,17 @@ Settings to configure name, username, nickname, email and profile picture.
 Full Name
 ~~~~~~~~~
 
-Full names appear in the Direct Messages member list and team management modal. By default, you will receive mention notifications when someone types your first name. Entering a full name is optional.
+Full names appear in the Direct Messages member list and team management modal. By default, you will receive mention notifications when someone types your first name. Entering a full name is optional. 
 
 Username
 ~~~~~~~~
 
-Usernames are unique identifiers appearing next to all posts. Pick something easy for teammates to recognize and recall. By default, you will receive mention notifications when someone types your username. In order to maintain message integrity, changing your username does not update @mentions in messages already posted. 
+Usernames are unique identifiers appearing next to all posts. Pick something easy for teammates to recognize and recall. By default, you will receive mention notifications when someone types your username. In order to maintain message integrity, changing your username does not update @mentions in messages already posted. Username must begin with a letter, and contain between 3 to 22 lowercase characters made up of numbers, letters, and the symbols '.', '-', and '_'. 
 
 Nickname
 ~~~~~~~~
 
-Nicknames appear in the Direct Messages member list and team management modal. You will not receive mention notifications when someone types your nickname unless you add it to the *Words That Trigger Mentions* in **Account Settings > Notifications**.
+Nicknames appear in the Direct Messages member list and team management modal. You will not receive mention notifications when someone types your nickname unless you add it to the *Words That Trigger Mentions* in **Account Settings > Notifications**. 
 
 Position
 ~~~~~~~~~
@@ -55,7 +55,7 @@ Multi-factor Authentication
 
 When this option is available you can require a phone-based passcode in addition to your password for sign-in.
 
-To enable, download Google Authenticator from `iTunes <https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8>`_ or `Google Play <https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en>`_ for your phone, then:
+To enable, download Google Authenticator from `iTunes <https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8>`__ or `Google Play <https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en>`__ for your phone, then:
 
 1. Click the **Add MFA to your account** button.
 2. Use Google Authenticator to scan the QR code that appears.
@@ -99,7 +99,7 @@ Desktop Notifications
 
 Desktop notifications appear in the corner of your main monitor when there is activity in Mattermost.
 
-When `Desktop App <https://about.mattermost.com/download/#mattermostApps>`_ notifications are set to "Only for mentions and direct messages", an empty red circle is displayed over the upper right corner of the Mattermost dock icon when any message without an at-mention is received. A solid red circle with a post count is displayed when a message with an at-mention is received.
+When `Desktop App <https://about.mattermost.com/download/#mattermostApps>`__ notifications are set to "Only for mentions and direct messages", an empty red circle is displayed over the upper right corner of the Mattermost dock icon when any message without an at-mention is received. A solid red circle with a post count is displayed when a message with an at-mention is received.
 
 Send Desktop Notifications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -109,7 +109,7 @@ Choose what activity triggers a desktop notification. This setting applies globa
 Notification Sound
 ^^^^^^^^^^^^^^^^^^
 
-Notification sounds fire for any activity that would trigger a desktop notification. Notification sounds are available on IE11, Edge, Safari and Chrome.
+Notification sounds fire for any activity that would trigger a desktop notification. Notification sounds are available on Edge, Safari and Chrome.
 
 Notification Duration
 ^^^^^^^^^^^^^^^^^^^^^
@@ -145,11 +145,11 @@ By default, you receive notifications when someone posts a message that contains
 Reply Notifications
 ~~~~~~~~~~~~~~~~~~~
 
-In addition to **Words that Trigger Mentions**, this setting allows you to receive mention notifications when someone replies to a thread that you started or participated in. You are considered to start a thread when you post a message to which other members of your team reply. You are considered to participate in a thread when you post a message using the `reply button <https://docs.mattermost.com/help/getting-started/messaging-basics.html#messaging-basics>`_ in an already existing thread.
+In addition to **Words that Trigger Mentions**, this setting allows you to receive mention notifications when someone replies to a thread that you started or participated in. You are considered to start a thread when you post a message to which other members of your team reply. You are considered to participate in a thread when you post a message using the `reply button <https://docs.mattermost.com/help/getting-started/messaging-basics.html#messaging-basics>`__ in an already existing thread.
 
 Automatic Direct Message Replies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Set a custom message that will be automatically sent in response to Direct Messages. Mentions in Public and Private Channels will not trigger the automated reply. Enabling Automatic Replies sets your status to Out of Office and disables email and push notifications. This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html?highlight=config%20settings#enable-automatic-replies-experimental>`_.
+Set a custom message that will be automatically sent in response to Direct Messages. Mentions in Public and Private Channels will not trigger the automated reply. Enabling Automatic Replies sets your status to Out of Office and disables email and push notifications. This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html?highlight=config%20settings#enable-automatic-replies-experimental>`__.
 
 Display
 -------
@@ -184,19 +184,17 @@ Choose a 12-hour or 24-hour time preference that appears on the time stamp for a
 Teammate Name Display
 ~~~~~~~~~~~~~~~~~~~~~
 
-*Moved to a System Console setting in July 16th, 2017 release*
-
-Configure how names are displayed in Mattermost: nickname, username or full name.
+Configure how names are displayed in the user interface: nickname, username or full name. The default for this setting is dependent on the `configuration set by the System Admin <https://docs.mattermost.com/administration/config-settings.html#teammate-name-display>`__.
 
 Timezone
 ~~~~~~~~~~~~~~~~~~~~~
 
-Select the timezone used for timestamps in the user interface and email notifications. The setting `must first be enabled by the System Admin <https://docs.mattermost.com/administration/config-settings.html#timezone>`_ by replacing ``false`` with ``true`` in config.json.
+Select the timezone used for timestamps in the user interface and email notifications. The setting `must first be enabled by the System Admin <https://docs.mattermost.com/administration/config-settings.html#timezone>`__ by replacing ``false`` with ``true`` in config.json.
 
 Website Link Previews
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-When available, the first web link in a message will show a preview of the website content below the message. This `setting must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#link-previews>`_.
+When available, the first web link in a message will show a preview of the website content below the message. This `setting must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#link-previews>`__.
 
 Link Previews
 ~~~~~~~~~~~~~
@@ -208,7 +206,7 @@ Message Display
 
 Select the formatting for messages in the center channel. "Compact" mode decreases the spacing around posts, collapses link previews, and hides thumbnails so only file names are shown. Some formatting types, such as block quotes and headings, are also reduced in size.
 
-Channel Display Mode
+Channel Display
 ~~~~~~~~~~~~~~~~~~~~
 
 Select if the text in the center channel is fixed width and centered, or full width.
@@ -229,6 +227,7 @@ Select what language Mattermost displays in the user interface. Options include:
 - Română - Romanian
 - Türkçe - Turkish
 - Pусский - Russian
+- Yкраїнська - Ukrainian
 - 한국어 - Korean
 - 中文 (简体) - Simplified Chinese
 - 中文 (繁體) - Traditional Chinese
@@ -237,31 +236,59 @@ Select what language Mattermost displays in the user interface. Options include:
 Sidebar
 --------
 
-Automatically close direct messages
+Channel grouping and sorting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Hide Direct Message conversations with no activity for 7 days. These conversations can be reopened with the “+” button in the sidebar or by using the Channel Switcher (CTRL+K). This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental>`_.
+
+These settings are experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#sidebar-organization-experimental>`__.
+
+Channel grouping
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Channels can be grouped by type (Public, Private, or Direct Message), or all channel types can be grouped in a single list.
+
+Channel sorting
+^^^^^^^^^^^^^^^^^^
+Channels can be sorted within their sidebar sections alphabetically (default) or by most recent message.
+
+Unreads grouped separately
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If enabled, this feature groups unread channels at the top of the channel sidebar.
+
+Favorites grouped separately
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If enabled, this feature groups favorite channels in their own sidebar section.
 
 Group unreads channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-If enabled, this feature groups unread channels at the top of the channel sidebar. This setting is experimental and can be disabled from **Account Settings** -> **Sidebar** -> **Group Unreads Channels**. The setting `must first be enabled by the System Admin <https://docs.mattermost.com/administration/config-settings.html#group-unread-channels-experimental>`_, by replacing ``disabled`` with either ``default_off`` or ``default_on`` in config.json.
+
+*Removed in December 16, 2018 release and replaced by a new ExperimentalChannelOrganization setting*
+
+If enabled, this feature groups unread channels at the top of the channel sidebar. This setting is experimental and can be disabled from **Account Settings** -> **Sidebar** -> **Group Unreads Channels**. The setting `must first be enabled by the System Admin <https://docs.mattermost.com/administration/config-settings.html#group-unread-channels-experimental>`__, by replacing ``disabled`` with either ``default_off`` or ``default_on`` in config.json.
+
+Channel Switcher
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Hide the channel switcher at the bottom of the sidebar used to jump between channels quickly. The channel switcher can also be accessed using CTRL/CMD + K.
+
+Automatically close direct messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Hide Direct Message conversations with no activity for 7 days. These conversations can be reopened with the “+” button in the sidebar or by using the Channel Switcher (CTRL+K). This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental>`__.
 
 Advanced
 --------
 
 Settings to configure when messages are sent.
 
-Send Messages on CTRL+ENTER
+Send messages on CTRL+ENTER
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If enabled, press ENTER to insert a new line and CTRL+ENTER posts the message. If disabled, SHIFT+ENTER inserts a new line and ENTER posts the message.
+If "On for all messages" is enabled, ENTER inserts a new line and CTRL+ENTER posts a message. If "On only for code blacks starting with ```" is enabled, ENTER inserts a new line inside an open code block and CTRL+ENTER automatically closes the code block and posts the message. If disabled, SHIFT+ENTER inserts a new line and ENTER posts the message.
 
 Enable Post Formatting
 ~~~~~~~~~~~~~~~~~~~~~~
 
-This setting controls whether post formatting is rendered. When "On", posts will be rendered with `markdown formatting <http://docs.mattermost.com/help/messaging/formatting-text.html>`_, emoji, autolinked URLs, and line breaks. When "Off", the raw text will be shown.
+This setting controls whether post formatting is rendered. When "On", posts will be rendered with `markdown formatting <http://docs.mattermost.com/help/messaging/formatting-text.html>`__, emoji, autolinked URLs, and line breaks. When "Off", the raw text will be shown.
 
-Enable Join/Leave Messages (Enterprise Edition)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable Join/Leave Messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting controls whether system messages about users joining or leaving a channel are visible. When **On** these messages will appear. When **Off**, these messages will be hidden. If any users are added to or removed from a channel, a system message will still be shown even if this setting is **Off**.
 
@@ -271,3 +298,14 @@ Preview pre-release features
 Turn on preview features to view them early, ahead of their official release:
 
 - **Show markdown preview option in message input box** Turning this on will show a "Preview" option when typing in the text input box. Pressing "Preview" shows what the Markdown formatting in the message looks like before the message is sent.
+
+Deactivate Account
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Use this setting to deactivate your account. After deactivating, an email notification is sent confirming the deactivation was successful.
+
+Deactivating your account removes your ability to log in to the Mattermost server and disables all email and mobile notifications. To reactivate your account, contact your System Administrator.
+
+Only available for accounts with email login, and if your System Administrator has set ``EnableUserDeactivation`` to ``true`` in ``config.json``.
+
+For accounts with other authentication methods such as AD/LDAP or SAML, or for accounts that do not have this setting available, contact your System Administrator to deactivate your account.

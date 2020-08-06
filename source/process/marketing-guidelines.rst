@@ -1,6 +1,8 @@
-============================================================
 Mattermost Community Content Guidelines
 ============================================================
+
+.. note::
+  This page is largely out-of-date and is stored for record-keeping purposes. For latest marketing processes and guidelines, see the `Mattermost Handbook <https://handbook.mattermost.com/operations/messaging-and-math>`_.
 
 The following guidelines are intended to help community members contribute guest blog posts or propose Twitter content, as well as for staff at Mattermost, Inc. interacting with the community. 
 
@@ -37,7 +39,7 @@ In order to achieve these goals, our writing must be:
  2. **Appealing to secondary audiences.** These include open source and in-house developers and end users at highly regulated companies.
  3. **Part of our brand.** Our style and message must be consistent over the long term. Therefore, all of our content, irrespective of purpose or subject-matter, must pull the reader in the same direction and reinforce our key messages. 
  4. **High quality.** Quality in writing reflects the professionalism of our organization. We pay attention to the rules of grammar and spelling.
- 5. **Clear & transparent.** We aim to communicate simply, using language that is familiar to our audiences. People don't buy what they don't understand!
+ 5. **Clear and transparent.** We aim to communicate simply, using language that is familiar to our audiences. People don't buy what they don't understand!
  6. **International.** Mattermost has customers around the world and in many cases English is their second language. Use standard American English but do not use metaphors or expressions that people outside of North America are unlikely to understand.
  7. **Avoiding unintentional controversy.** We might want to stir up a bit of controversy now and again – but only on relevant technological and business topics. Avoid subjects or analogies that might provoke an emotional or hostile response: religion, politics, warfare, personal relationships etc. 
  8. **Fit for purpose.** Is your content designed to persuade (e.g. an opinion piece), promote (e.g. a product description) or instruct (e.g. to guide a user through procedural steps)? Adjust your tone and your language accordingly.
@@ -65,26 +67,3 @@ Guidelines: 12 tips for sparkling content
  10. **Edit ruthlessly**. Use the first draft to get your thoughts together. Then leave it for a few hours (or even days). Shorten, delete, and rewrite anything that does not add to the meaning. Run a spelling and grammar check.
  11. **Ask a colleague**. Still not 100% happy? A colleague should review the text and tell you if anything is unclear or if you could express yourself better. They might offer some useful fresh insights.
  12. **Now, relax**. If you are in the wrong frame of mind you will either get writer's block or your writing will be stiff and unnatural. Take your time. Remove any distractions. Keep things simple. 
-
-Guidelines for Twitter accounts
----------------------------------------------------------
-
-Composing Tweets: 
-
-1. **Avoid acronyms**. Avoid acronyms when possible. For example, say "pull request" instead of "PR", since only a subset of tweet readers are active GitHub users. 
-2. **Use the active voice**. Avoid "has", "was", "have been" when possible. For example, instead of "Hackfest has started!" say "Hackfest starts now!" 
-3. **Include at most one link**. To provide a clear call to action include at most one link per tweet, and place it near the end of the tweet.
-4. **Use exclamation marks only for exciting announcements**. An exclamation mark can be used when the announcement is exciting, but using an exclamation mark should be avoided when it can be confused with a signal for community to panic, e.g. "Security update released!".
-5. **Be welcoming**. When asking someone to take action, use "Would you be open to" instead of "Would you like to".
-   
-Guidelines for release announcements
----------------------------------------------------------
-
-Composing blog posts: 
-
-1. **Include [RELEASE] [HEADLINE] in title**. Use titles that draw in IT audiences. E.g. "Mattermost 4.1: Integration enhancements with personal access tokens and streamlined apps, starting with JIRA". Focus the title on 1 to 2 key features of the release.
-2. **Use Twitter banners for images**. Use Twitter banners to make visuals consistently high-quality throughout the release announcement. Also allows the marketing team use the images for tweets.
-3. **Include a clear theme**. Decide what theme to focus on throughout the release announcement. E.g. in `4.1 release announcement the focus was placed on integrations <https://about.mattermost.com/mattermost-4-1/>`_.
-4. **Emphasize benefit**. Always start each section with the benefit - the benefit should be clear in the first 1 or 2 sentences. IT audiences are typically more interested in the business benefits of technology than technical features. Emphasize benefit also in screenshots and image captions. 
-5. **Know your audience**. Consider the audience you are writing this announcement for. E.g. admins who upgrade the Mattermost server, customers making a decision about purchasing the Enterprise Edition, end-users, or other.
-6. **Test on mobile**. Before you publish a blog post, make sure that it is mobile-friendly by testing it on smartphone and tablet platforms.

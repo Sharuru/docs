@@ -5,14 +5,14 @@ A wide range of rich text formatting options, including bold, italic, headings, 
 
 For additional formatting options, and for compatibility with Slack non-markdown integrations, an ``attachments`` array can be sent by integrations and rendered by Mattermost.
 
-You can also add interactive message buttons as part of attachments. They help make your integrations richer by completing common tasks inside Mattermost conversations, increasing user engagement and productivity. For more information, see :doc:`documentation <interactive-message-buttons>`.
+You can also add interactive message buttons as part of attachments. They help make your integrations richer by completing common tasks inside Mattermost conversations, increasing user engagement and productivity. For more information, see :doc:`documentation <interactive-messages>`.
 
 Attachment Options
 ------------------
 
 When sending an attachment, you can use any of the following to format how you want the posted message to look.
 
-``fallback``: A required plain-text summary of the post. This is used in notifications, and in clients that don’t support formatted text (eg IRC).
+``fallback``: A required plain-text summary of the attachment. This is used in notifications, and in clients that don’t support formatted text (e.g. IRC).
 
 ``color``: A hex color code that will be used as the left border color for the attachment. If not specified, it will default to match the left hand sidebar header background color.
 
@@ -51,7 +51,7 @@ Fields
 
 Fields can be included as an optional array within ``attachments``, and are used to display information in a table format inside the attachment.
 
-``title``: A title shown in the table above the ``value``.
+``title``: A title shown in the table above the ``value``.  As of v5.14 a title will render emojis properly.
 
 ``value``: The text value of the field. It can be formatted using :doc:`Markdown <../help/messaging/formatting-text>`.
 
@@ -124,10 +124,44 @@ And here is how it renders in Mattermost:
 
 .. image:: ../images/attachments-example.png
 
+Footer
+~~~~~~~
+
+``footer``: An optional line of text that will be displayed at the bottom of the attachment. Footers with more than 300 characters will be truncated with an ellipsis (``…``).
+
+``footer_icon``: An optional URL to an image file (GIF, JPEG, PNG, BMP, or SVG) that is displayed as a 16x16 pixel thumbnail before the footer text.
+
+.. image:: ../images/attachments-footer.png
 
 Known Issues
 ------------
 
-1. ``color`` parameter does not support "good", "warning", and "danger" values
-2. Footer information fields are not yet supported (``footer``, ``footer_icon``, and timestamp ``ts``)
-3. Message Attachment contents do not show up in search
+1. The footer timestamp field (``ts``) is not yet supported
+2. Message Attachment contents do not show up in search
+
+Frequently Asked Questions
+---------------------------
+
+Can I send a message attachment via the API?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes, you can use the `create post RESTful API <https://api.mattermost.com/#tag/posts%2Fpaths%2F~1posts%2Fpost>`_.
+
+You need to add an "attachment" key to the post's props JSON field. The value is an array of message attachments you want attached to the post. See below for an example curl command.
+
+.. code-block:: bash
+
+  curl -i -X POST -H 'Content-Type: application/json' -d '{"channel_id":"qmd5oqtwoibz8cuzxzg5ekshgr", "message":"Test message #testing", "props":{"attachments": [{"pretext": "This is the attachment pretext.","text": "This is the attachment text."}]}}' http://{your-mattermost-site}/posts
+
+Below is an example HTTP request:
+
+.. code-block:: http
+
+  POST /posts HTTP/1.1
+  Host: {your-mattermost-site}
+  User-Agent: curl/7.63.0
+  Accept: */*
+  Content-Type: application/json
+  Content-Length: 192
+
+  {"channel_id":"qmd5oqtwoibz8cuzxzg5ekshgr", "message":"Test message #testing", "props":{"attachments": [{"pretext": "This is the attachment pretext.","text": "This is the attachment text."}]}}

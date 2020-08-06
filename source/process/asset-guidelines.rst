@@ -1,6 +1,8 @@
-============================================================
 Mattermost Asset Guidelines
 ============================================================
+
+.. note::
+  This page is largely out-of-date and is stored for record-keeping purposes. For latest marketing processes and guidelines, see the `Mattermost Handbook <https://handbook.mattermost.com/operations/messaging-and-math>`_.
 
 The following guidelines are intended to help queue and prepare marketing assets for community projects by the Mattermost core committers and the Mattermost community.
 
@@ -15,9 +17,9 @@ Follow these steps to queue an asset for a new community project:
 Integrations and Installers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you find a new integration or installer in the `Mattermost Facebook page <https://www.facebook.com/MattermostHQ/?fref=ts>`_, `Mattermost Twitter page <https://twitter.com/mattermosthq>`_, `GitHub <https://github.com/search?utf8=%E2%9C%93&q=mattermost>`_ or elsewhere you feel Mattermost should promote:
+If you find a new integration or installer in the `Mattermost Facebook page <https://www.facebook.com/Mattermost-2300985916642531/>`__, `Mattermost Twitter page <https://twitter.com/mattermost>`__, `GitHub <https://github.com/search?utf8=%E2%9C%93&q=mattermost>`__ or elsewhere you feel Mattermost should promote:
 
-1. Post a request to the `Contributors team "Integrations and Apps" channel <https://pre-release.mattermost.com/core/channels/integrations>`_ with:
+1. Post a request to the `Contributors team "Integrations and Apps" channel <https://community.mattermost.com/core/channels/integrations>`__ with:
 
   - mention to @jason
   - link to suggested integration
@@ -49,13 +51,13 @@ If you find a new integration or installer in the `Mattermost Facebook page <htt
       
       Here's the form: https://spinpunch.wufoo.com/forms/mattermost-integrations-and-installers/
       
-      We'd also like to welcome you to join our public integrations community channel on our nightly build server: https://pre-release.mattermost.com/core/channels/integrations
+      We'd also like to welcome you to join our public integrations community channel on our nightly build server: https://community.mattermost.com/core/channels/integrations
 
       Thanks for being a valued member of the Mattermost Community!
 
       - The Mattermost Team
 
-3. When a contributor submits an integration via the `Wufoo form <https://spinpunch.wufoo.com/forms/mattermost-integrations-and-installers/>`_, a Zapier webhook posts relevant information into the `Integrations and Apps channel <https://pre-release.mattermost.com/core/channels/integrations>`_.
+3. When a contributor submits an integration via the `Wufoo form <https://spinpunch.wufoo.com/forms/mattermost-integrations-and-installers/>`__, a Zapier webhook posts relevant information into the `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`__.
 
 4. Ops replies to each new Wufoo post with a numbered project title and project status. Example:
 
@@ -66,19 +68,19 @@ If you find a new integration or installer in the `Mattermost Facebook page <htt
 Media Articles
 ^^^^^^^^^^^^^^^
 
-When a relevant article on Mattermost is found in the news, add a new entry into `this Google document <https://docs.google.com/document/d/1kwCmn6JYeORdLV0noIk4iaxZx0iqR6OWUuzw5cZl6rA/edit>`_ and follow the process specified there.
+When a relevant article on Mattermost is found in the news, add a new entry into `this Google document <https://docs.google.com/document/d/1kwCmn6JYeORdLV0noIk4iaxZx0iqR6OWUuzw5cZl6rA/edit>`__ and follow the process specified there.
 
 Step-by-Step Asset Creation Guide for Artists
 ----------------------------------------------
 
 Follow these steps to create an asset for integration or feature promotion or for guest blog posts.
 
-You can find sample templates `in this Google drive <https://drive.google.com/open?id=0Bx-9w8QDFlfcbUh2bGdkRElJaWs>`_.
+You can find sample templates `in this Google drive <https://drive.google.com/open?id=0Bx-9w8QDFlfcbUh2bGdkRElJaWs>`__.
 
 Integration or Feature Promotion
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Use this `template (dark background) <https://www.dropbox.com/s/a8tbqxiik1m9i8u/20170717_template_dark.tif?dl=0>`_ or this `template (light background) <https://www.dropbox.com/s/codoct7np20fx3l/20170717_template_light.tif?dl=0>`_ as a starting point.
+1. Use this `template (dark background) <https://www.dropbox.com/s/a8tbqxiik1m9i8u/20170717_template_dark.tif?dl=0>`__ or this `template (light background) <https://www.dropbox.com/s/codoct7np20fx3l/20170717_template_light.tif?dl=0>`__ as a starting point.
 2. Update the title following the guidelines in `Feature Title`_.
 3. Update the footer and the creator name following the guidelines in `Feature Footer`_ and in `Feature Creator`_.
 4. Update representative art following the guidelines in `Feature Representative Art`_.
@@ -89,10 +91,10 @@ Integration or Feature Promotion
 Guest Blog Posts
 ^^^^^^^^^^^^^^^^^
 
-1. Use this `template <https://drive.google.com/file/d/0Bx-9w8QDFlfcQURoRnF1YllZWWc/view?usp=sharing>`_ as a starting point.
+1. Use this `template <https://drive.google.com/file/d/0Bx-9w8QDFlfcQURoRnF1YllZWWc/view?usp=sharing>`__ as a starting point.
 2. Update the title following the guidelines in `Feature Title`_.
 3. Update representative logo following the guidelines in `Mattermost and Representative Logos`_.
-4. Obtain a photo of the guest company member and apply a gray-scale effect. You can also consider applying a `Puppet Module effect <https://www.mattermost.org/puppet-module-for-mattermost/>`_.
+4. Obtain a photo of the guest company member and apply a gray-scale effect. You can also consider applying a `Puppet Module effect <https://www.mattermost.org/puppet-module-for-mattermost/>`__.
 5. Add a 1 pixel grey stroke border around the rectangular boundary of the banner.
 6. Save the finished asset draft in both .TIF and .PNG format, and upload to your "Dropbox Share" folder.
 
@@ -157,45 +159,23 @@ Mattermost and Representative Logos
 6. When the background color is dark, use the white/inverted version of representative logo. When the background color is light, use the dark/primary version of representative logo.
 7. If the color of the representative logo is the same as the color of the title, make sure to make them distinctive from each other by slightly reducing the size of the logo.
 
-Feature Screenshot
-^^^^^^^^^^^^^^^^^^^
+Feature Screenshot Development
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When taking a screenshot of a feature, follow these guidelines:
+When taking a screenshot of a feature, use this checklist to guide your work:
 
-1. **Complete**: Profile pictures and real people names should be filled out. Use either in-house art, free, or purchased clip art. If you're modifying the image such as changing username and profile picture, make sure to do it throughout the image. Don't show any bugs or UX defects in the product and use the "Mattermost" theme when appropriate.
-2. **Authentic**: Try to model a real world interaction. When possible, highlight DevOps use cases since they are familiar to the majority of our users.
-3. **Oversized**: Provide screenshots that are at least 20-30% larger than needed, so that there is room to rotate and crop the image as needed.
-4. **Illustrative**: Try to find screenshots that are representative of the feature.
-5. **Easy to follow**: The screenshot should be easy to understand at a glance. Avoid using short forms or acronyms in conversations, and choose images that are clear.
+1. **Profiles**: Profile pictures and real people’s names should be filled out throughout the screenshot. For the profile picture, use either normal-looking Avatars or stock photography.
+2. **Content**: Show the feature in action. If you are highlighting a specific feature, try to have that screenshot focused on it rather than displaying the whole app. For example, if you are highlighting 1-1 direct message conversations, only include that conversation in your screenshot. Finally, ensure that the contents of the screenshot shows the Mattermost product in the best light - give whoever is viewing it a positive emotion.
+3. **Use Cases**: Model a real world interaction. When possible, highlight DevOps use cases since they are familiar to the majority of our users.
+4. **Clarity**: Avoid truncating the channel header text, or cutting off messages due to the scroll position in the center pane. All text should be fully visible.
+5. **Size**: Provide screenshots that are double in size than needed - this ensures the screenshot does not rasterize on retina displays. The definite size per screenshot can vary - however, a standard will be established per type/category of the screenshot. For example, screenshots of the center pane should be 750px in size (with the shadows).
+6. **Spacing**: Add additional spacing to a screenshot if necessary to highlight a feature.
+7. **Calibration**: Make sure that the zoom level is at default level, and that the screenshot is not pixelated. Add a box shadow with the screenshot (0 2px 50 0 rgba(black, 0.1)), as well as a grey outline so that it looks good on both dark and light backgrounds.
 
 Screenshot Development of Mattermost User Interface
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The purpose is to highlight and illustrate the best features of Mattermost user interface.
-
-To choose the best screenshot image, follow this order: an end-user screenshot that best illustrates the feature > screenshot of System Console or other settings help text > screenshot of documentation > screenshot of a code mentioning the feature and/or Mattermost.
-
-Setup
-~~~~~~~~~~~~~
-
-- Use the Mattermost Desktop app, which has a nicer border.
-- Create a secondary account with [first.last]+blah@mattermost.com email address. This makes triggering notifications for yourself easier (for the screenshot). You can also use a second browser to login to the second account while taking the screenshot.
-
-Checklist
-~~~~~~~~~~~~~
-
-- Screen size: Provide screenshots that are 20-30% larger than needed - this will make it easier for the screenshot to be included in blog posts, documentation, and others. To do this, close the right-hand sidebar and shrink your screen horizontally to make it narrower, leaving the screen wide enough until the "mobile send button" no longer appears in the bottom-right corner. Make sure not to cut off any sides of the page in the screenshot.
-- Left-hand side: Include Favorite, Public, and Private channels on the left-hand side. Make sure that you scroll all the way to the top in the channel list on the left-hand side for the screenshot.
-- Favorites channel list: Include one Public channel, a Direct Message channel with someone who is online, as well as a Group Direct Message channel using people with short names to avoid truncation.
-- Center pane: Make the center pane one of the Favorited channels. Make sure that the heading of the center pane is fully visible to avoid truncation. Also, make the first message in the center pane fully visible right below the channel header.
-- Profiles: Profile pictures and real people's names should be filled out throughout the screenshot. For the profile picture, use either normal-looking Avatars or stock photography.
-- Clarity: Do not include an "unread posts" indicator in the left-hand side, but you can have a few mentions. Also, avoid showing any text with acronyms and abbreviations. Do not show any bugs or defects. Make sure that the area of focus is big enough to read in blog posts, documentation, and others.
-- Outline: Ensure that the screenshot has a grey outline so that it looks good on both dark and light backgrounds.
-- Outstanding look: Ensure that the contents of the screenshot shows the Mattermost product in the best light.
-   
-   - Show the feature in action.
-   - Make sure that the screenshot is positive - give whoever is viewing it a positive emotion.
-   - Show how the feature can be extended and customized. For instance, use custom slash commands instead of the default commands.
+Screenshot development guidelines have been moved to the `Mattermost Handbook <https://handbook.mattermost.com/operations/messaging-and-math/how-to-guides-for-m-and-m/how-to-create-screenshots-and-gifs>`_.
 
 Animated GIFs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -205,8 +185,8 @@ Animated GIFs with two images that look very similar should not be created since
 Step-by-Step Asset Review Guide for Ops
 ----------------------------------------
 
-1. Upload the artists "work in progress" files to the `Archive Dropbox sub-folder <https://www.dropbox.com/home/marketing/Twitter/archive>`_ in `Twitter Marketing <https://www.dropbox.com/sh/13h55hakbvm7iva/AAARooC0rV8JCKBI_8VUj_tga?dl=0>`_
-2. In the `Contributors team <https://pre-release.mattermost.com/core/channels/integrations>`_, find the appropriate conversation thread for the queued project, and add a comment mentioning @jason with the following:
+1. Upload the artists "work in progress" files to the `Archive Dropbox sub-folder <https://www.dropbox.com/home/marketing/Twitter/archive>`__ in `Twitter Marketing <https://www.dropbox.com/sh/13h55hakbvm7iva/AAARooC0rV8JCKBI_8VUj_tga?dl=0>`__
+2. In the `Contributors team <https://community.mattermost.com/core/channels/integrations>`__, find the appropriate conversation thread for the queued project, and add a comment mentioning @jason with the following:
 
   - Link to the image in Dropbox
   - Proposed tweet text with a note to specify whether or not the mention in the text is the Twitter handle of the user. 

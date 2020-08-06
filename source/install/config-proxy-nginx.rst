@@ -11,8 +11,11 @@ NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory
 2. Create a configuration file for Mattermost.
 
   ``sudo touch /etc/nginx/sites-available/mattermost``
+  
+On RHEL 7: ``sudo touch /etc/nginx/conf.d/mattermost``
 
 3. Open the file ``/etc/nginx/sites-available/mattermost`` as root in a text editor and replace its contents, if any, with the following lines. Make sure that you use your own values for the Mattermost server IP address and FQDN for *server_name*.
+On RHEL 7, open the file ``/etc/nginx/conf.d/mattermost``.
 
   .. code-block:: none
 
@@ -72,15 +75,19 @@ NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory
 
   ``sudo rm /etc/nginx/sites-enabled/default``
 
+On RHEL 7: ``sudo rm /etc/nginx/conf.d/default``
+
 5. Enable the mattermost configuration.
 
   ``sudo ln -s /etc/nginx/sites-available/mattermost /etc/nginx/sites-enabled/mattermost``
 
+On RHEL 7: ``sudo ln -s /etc/nginx/conf.d/mattermost /etc/nginx/conf.d/default.conf``
+
 6. Restart NGINX.
 
-  On Ubuntu 14.04 and RHEL 6.6: ``sudo service nginx restart``
+  On Ubuntu 14.04 and RHEL 6: ``sudo service nginx restart``
 
-  On Ubuntu 16.04, Debian Jessie, and RHEL 7.1: ``sudo systemctl restart nginx``
+  On Ubuntu 16.04, Ubuntu 18.04, Debian Stretch, and RHEL 7: ``sudo systemctl restart nginx``
 
 7. Verify that you can see Mattermost through the proxy.
 
@@ -120,7 +127,7 @@ Then in ``config.json`` set the ``AllowCorsFrom`` setting to match the domain be
   "AllowCorsFrom": "domain.com domain.com:443 im.domain.com",
   "SessionLengthWebInDays": 30,
 
-For other troubleshooting tips for WebSocket errors, see `potential solutions here <https://docs.mattermost.com/install/troubleshooting.html#please-check-connection-mattermost-unreachable-if-issue-persists-ask-administrator-to-check-websocket-port>`_.
+For other troubleshooting tips for WebSocket errors, see `potential solutions here <https://docs.mattermost.com/install/troubleshooting.html#please-check-connection-mattermost-unreachable-if-issue-persists-ask-administrator-to-check-websocket-port>`__.
 
 **How do I setup an NGINX proxy with the Mattermost Docker installation?**
 
@@ -148,7 +155,7 @@ For other troubleshooting tips for WebSocket errors, see `potential solutions he
     environment:
       # set same as db credentials and dbname
       - MM_USERNAME=mmuser
-      - MM_PASSWORD=mmuser_password
+      - MM_PASSWORD=mmuser-password
       - MM_DBNAME=mattermost
       - VIRTUAL_HOST=mymattermost.tld
     expose:

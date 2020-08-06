@@ -3,12 +3,14 @@
 Configuring Apache2 with SSL and HTTP/2 (Unofficial)
 =====================================================
 
-.. important:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. `Community testing, feedback and improvements are welcome and greatly appreciated <https://github.com/mattermost/docs/issues/1295>`_. You can `edit this page on GitHub <https://github.com/mattermost/docs/blob/master/source/install/config-ssl-http2-apache2.rst>`_.
+.. important:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. `Community testing, feedback and improvements are welcome and greatly appreciated <https://github.com/mattermost/docs/issues/1295>`__. You can `edit this page on GitHub <https://github.com/mattermost/docs/blob/master/source/install/config-ssl-http2-apache2.rst>`__.
 
-Once you've configured Apache2 as a proxy for your Mattermost Server, the easiest way to enable SSL on Apache2 is via Let's Encrypt and `Certbot <https://certbot.eff.org/#ubuntuxenial-apache>`_.
+In order to use Apache as a reverse proxy for the Mattermost Server, you need to install and enable the following apache modules: ``mod_rewrite`` , ``mod_proxy``, ``mod_proxy_http``, ``mod_headers``, and ``mod_proxy_wstunnel``. Follow the installation instructions for your Linux distribution.
+
+Once you've configured Apache2 as a proxy for your Mattermost Server, the easiest way to enable SSL on Apache2 is via Let's Encrypt and `Certbot <https://certbot.eff.org/#ubuntuxenial-apache>`__.
 
 .. note::
-   If Let’s Encrypt is enabled, forward port 80 through a firewall, with `Forward80To443 <https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443>`_ ``config.json`` setting set to ``true`` to complete the Let’s Encrypt certification.
+   If Let’s Encrypt is enabled, forward port 80 through a firewall, with `Forward80To443 <https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443>`__ ``config.json`` setting set to ``true`` to complete the Let’s Encrypt certification.
 
 Once installed, run ``$ certbot --apache`` and follow the guide. Afterwards you should find a new configuration file in ``/etc/apache2/sites-available`` which should follow the format ``mysubdomain.mydomain.com-le-ssl.conf``.
 
@@ -21,27 +23,14 @@ When opened, edit it to look something like the following:
 		ServerName mysubdomain.mydomain.com
 		ServerAdmin hostmaster@mydomain.com
 		ProxyPreserveHost On
-
-		# setup the proxy
-		<Proxy *>
-			Order allow,deny
-			Allow from all
-		</Proxy>
-
+		RequestHeader set "X-Forwarded-Proto" expr=%{REQUEST_SCHEME}
+		RequestHeader set "X-Forwarded-SSL" expr=%{HTTPS}
+		
 		RewriteEngine On
 		RewriteCond %{REQUEST_URI} /api/v[0-9]+/(users/)?websocket [NC,OR]
 		RewriteCond %{HTTP:UPGRADE} ^WebSocket$ [NC,OR]
 		RewriteCond %{HTTP:CONNECTION} ^Upgrade$ [NC]
 		RewriteRule .* ws://127.0.0.1:8065%{REQUEST_URI} [P,QSA,L]
-		RewriteCond %{DOCUMENT_ROOT}/%{REQUEST_FILENAME} !-f
-		RewriteRule .* http://127.0.0.1:8065%{REQUEST_URI} [P,QSA,L]
-
-		<LocationMatch "^/api/v(?<apiversion>[0-9]+)/(?<apiusers>users/)?websocket">
-        		Require all granted
-        		ProxyPass ws://127.0.0.1:8065/api/v%{env:MATCH_APIVERSION}/%{env:MATCH_APIUSERS}websocket
-        		ProxyPassReverse ws://127.0.0.1:8065/api/v%{env:MATCH_APIVERSION}/%{env:MATCH_APIUSERS}websocket
-			ProxyPassReverseCookieDomain 127.0.0.1 mysubdomain.mydomain.com
-		</LocationMatch>
 
 		<Location />
 			Require all granted

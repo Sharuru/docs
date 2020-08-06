@@ -1,14 +1,380 @@
 Desktop Application Changelog
 ========================================
 
+Release v4.5
+----------------------------
+
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.5.2>`_
+
+- **v4.5.2, released 2020-07-20**
+ - Fixed an issue on Linux app started as a blank screen when both “Show icon in the notification area" and "Start app on login" were enabled. `MM-26832 <https://mattermost.atlassian.net/browse/MM-26832>`_
+- **v4.5.1, released 2020-07-13**
+ - Mattermost v4.5.1 contains a high level security fix. `Upgrading <http://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://about.mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://www.mattermost.org/responsible-disclosure-policy/>`__.
+- **v4.5.0, released 2020-06-16**
+ - Original v4.5.0 release
+
+Improvements
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Added a spell checker for Polish language. 
+- Added support for triggering a desktop notification when a file download is complete.
+- Added support for the cursor focus to be on the Server Name field when clicking on the ``+`` tab to add a new server.
+- Defaulted "Flash app window and taskbar icon when a new message is received" setting to ``True``.
+
+Mac
+^^^^^^^^^^^^^
+
+- On Mac, a closed window now reopens with ``CMD+Tab`` keyboard shortcut.
+
+Architectural Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Major version upgrade of Electron to v7.0.0. Electron is the underlying technology used to build the Desktop apps.
+
+Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Fixed an issue where the Desktop app could not authenticate with SAML with an IdP relay.
+- Fixed an issue where a moved server tab did not stay in focus.
+- Fixed an issue where right-clicking and then clicking "Save Image" didn't work.
+- Fixed an issue where trusting self-signed certificates kept asking for trust.
+- Fixed an issue where a link to the root of a server caused a "Channel not Found" error if the URL didn't end with a ``/``.
+- Fixed an issue where using ESC or Cancel to close the Add Server modal did not return focus to previously selected text input.
+- Fixed an issue where OneLogin links opened up in the app itself making it impossible to go back to the app.
+- Fixed an issue where links on "Cannot connect to Mattermost" error didn't work.
+
+Windows
+^^^^^^^^^^^^^
+- Fixed an issue where Windows Desktop notifications were delayed compared to other notification channels.
+- Fixed an issue where Windows Desktop Menu option was read as "Unlabel 0 button".
+- Fixed an issue where a white bar was present on the right-hand side of the Settings screen when Add Server modal was open.
+
+Mac
+^^^^^^^^^^^^^
+- Fixed an issue where double clicking the top bar no longer minimized or maximized the window.
+- Fixed an issue where users were unable to reposition the app by using click, hold and drag on the left side of the header.
+- Fixed an issue where server display name field lost focus when using ``CMD+Tab`` to navigate away and back to the app.
+- Fixed an issue where a long server address didn't wrap correctly in the new server settings page.
+- Fixed an issue where copy and pasting into Atlassian login fields pasted text in the wrong place.
+
+Known Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- A visible cursor focus is missing on the login screen directly after adding a new server via "+" to the right of the server tabs. `MM-25984 <https://mattermost.atlassian.net/browse/MM-25984>`_
+- Right-click menu is missing on "Add server" modal fields. `MM-26017 <https://mattermost.atlassian.net/browse/MM-26017>`_
+- Double notifications are received on Ubuntu for at-mentions. `MM-26012 <https://mattermost.atlassian.net/browse/MM-26012>`_
+- The current window frame and server tabs are not styled consistently with the rest of the OS in Windows 7 or Linux. `MM-22751 <https://mattermost.atlassian.net/browse/MM-22751>`_
+- Crashes might be be experienced in some linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library and a recommended workaround is to disable the system tray icon in the Desktop settings.
+- On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installers, it is not on the tgz. In this case manual intervention is required via ``$ chmod 4755 <installpath>/chrome-sandbox``.
+- Pressing Enter multiple times during Basic Authentication causes a crash.
+- On apps using GPO configurations, when adding a second server tab, it is possible to drag and drop tabs but they will jump back to the original position when releasing the mouse.
+
+Contributors
+~~~~~~~~~~~~~~~
+
+Many thanks to all our contributors. In alphabetical order:
+
+- `deanwhillier <https://github.com/deanwhillier>`_, `devinbinnie <https://github.com/devinbinnie>`_, `hanzei <https://github.com/hanzei>`_, `hunterlester <https://github.com/hunterlester>`_, `JtheBAB <https://github.com/JtheBAB>`_, `jupenur <https://github.com/jupenur>`_, `justledbetter <https://github.com/justledbetter>`_, `nevyangelova <https://github.com/nevyangelova>`_, `wget <https://github.com/wget>`_, `Willyfrog <https://github.com/Willyfrog>`_.
+
+Release v4.4
+----------------------------
+
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.4.2>`_
+
+- **v4.4.2, released 2020-05-11**
+ - Fixed an issue on Windows where a channel was marked as read if the app was closed on a channel where the message was posted. `MM-23215 <https://mattermost.atlassian.net/browse/MM-23215>`_
+- **v4.4.1, released 2020-04-22**
+ - Fixed an issue where the Desktop client opened to a blank white Window when using GPO-set teams. `MM-23082 <https://mattermost.atlassian.net/browse/MM-23082>`_
+ - Fixed an issue where Google oAuth with Gmail addresses did not work on the Desktop app for plugins. `MM-23057 <https://mattermost.atlassian.net/browse/MM-23057>`_
+ - Fixed an issue where Windows Desktop notifications were delayed. `MM-22552 <https://mattermost.atlassian.net/browse/MM-22552>`_
+ - Fixed an issue where the app sometimes didn't restore to the right position but "jumped" to a different place in the display when minimizing the app and then maximizing it. `MM-23195 <https://mattermost.atlassian.net/browse/MM-23195>`_
+ - Fixed an issue where users were not able to paste text into the login screen. `MM-23784 <https://mattermost.atlassian.net/browse/MM-23784>`_
+ - Fixed an issue where back/forward navigation on the OAuth window caused the app to crash. `MM-23153 <https://mattermost.atlassian.net/browse/MM-23153>`_
+- **v4.4.0, released 2020-02-16**
+ - Original v4.4.0 release
+
+**Note:** Mattermost v4.4.0 contains low to medium level security fixes. `Upgrading <http://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://about.mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://www.mattermost.org/responsible-disclosure-policy/>`__.
+
+**Breaking Changes** 
+
+- Due to moving to a new configuration version to support the new tabbar for the ability to rearrange the server tab order, it is recommended to do a backup of previous config if you want to downgrade your Desktop App version afterwards.
+
+Improvements
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Added support for Certificate Authentication, including PIV Card authentication.
+- Improved server tab organization and visuals with the ability to reorder server tabs via drag-and-drop, notification updates that make it easier to tell when new messages or mentions come in, and a new dark theme.
+- Added a spell checker for Italian language.
+- Added auto focus on Server Display Name input field.
+
+Architectural Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Major version upgrade of Electron to v6.0.0. Electron is the underlying technology used to build the Desktop apps.
+
+Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Fixed an issue where downgrading the app caused login issues.
+- Fixed an issue where Ctrl+C or Ctrl+V didn't work on Electron modals or developer tools.
+- Fixed an issue where navigation with Ctrl/Cmd+Tab stopped on disconnected server.
+- Fixed an issue where a new desktop window was created after clicking on a permalink to a channel on a different server.
+- Fixed an issue where changing the spellchecker on the app did not suggest words in that language.
+- Fixed an issue where the app window didn't save "floating" app position.
+- Fixed an issue where copying and pasting into Atlassian login fields pasted text in the wrong place.
+
+Windows
+^^^^^^^^^^^^^
+
+- Fixed an issue where installing v4.3.1 MSI installer did not remove the previous desktop app version.
+- Fixed an issue where an attachment name would lose its extension if it was edited during download.
+- Fixed an issue where the unread mention badge broke with more than 100 mentions.
+
+Mac
+^^^^^^^^^^^^^
+
+- Fixed an issue where the DMG install window user interface was missing styling.
+- Updated the look of Add New Server icon on the Settings page.
+- Fixed an issue where the app could not recover from a connection error after leaving a computer to sleep for a few days.
+
+Known Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- The current window frame and server tabs are not styled consistently with the rest of the OS in Windows 7 or Linux. `MM-22751 <https://mattermost.atlassian.net/browse/MM-22751>`_
+- No notification on Windows if the app is closed on the channel where the message is posted. `MM-23215 <https://mattermost.atlassian.net/browse/MM-23215>`_
+- Crashes might be be experienced in some linux desktop clients. This is an upstream bug in the ``libnotifyapp`` library and a recommended workaround is to disable the system tray icon in the Desktop settings.
+- On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installers, it is not on the tgz. In this case manual intervention is required via ``$ chmod 4755 <installpath>/chrome-sandbox``.
+- Pressing Enter multiple times during Basic Authentication causes a crash.
+- The confirmation dialog from UAC names MSI installers with random numbers.
+- On apps using GPO configurations, when adding a second server tab, it is possible to drag and drop tabs but they will jump back to the original position when releasing the mouse.
+
+Contributors
+~~~~~~~~~~~~~~~
+
+Many thanks to all our contributors. In alphabetical order:
+
+- `allenlai18 <https://github.com/allenlai18>`_, `cpanato <https://github.com/cpanato>`_,  `deanwhillier <https://github.com/deanwhillier>`_, `devinbinnie <https://github.com/devinbinnie>`_, `hunterlester <https://github.com/hunterlester>`_, `JtheBAB <https://github.com/JtheBAB>`_, `jupenur <https://github.com/jupenur>`_, `kethinov <https://github.com/kethinov>`_, `rascasoft <https://github.com/rascasoft>`_, `Willyfrog <https://github.com/Willyfrog>`_, `xalkan <https://github.com/xalkan>`_.
+
+Release v4.3
+----------------------------
+
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/4.3.2>`__
+
+- **v4.3.2, released 2019-11-29**
+ - Mattermost v4.3.0 contains a low level security fix. `Upgrading <http://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://about.mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://www.mattermost.org/responsible-disclosure-policy/>`_.
+ - Fixed an issue where the app started into white screen after a system reboot on Windows. `MM-19649 <https://mattermost.atlassian.net/browse/MM-19649>`_
+ - Fixed an issue where `CMD+Z` didn't undo on the Mac desktop app. `MM-19198 <https://mattermost.atlassian.net/browse/MM-19198>`_
+ - Fixed an issue where users were unable to zoom in/out except on the first server tab. `MM-19032 <https://mattermost.atlassian.net/browse/MM-19032>`_
+ - Fixed an issue where right-click + "Copy" did not work in some instances. `MM-19324 <https://mattermost.atlassian.net/browse/MM-19324>`_
+ - Fixed an issue where email links in profile popovers didn't work. `MM-19596 <https://mattermost.atlassian.net/browse/MM-19596>`_
+- **v4.3.1, released 2019-10-22**
+ - Fixed an issue where Mac desktop app was not notarized correctly for installing on MacOS Catalina. `MM-19555 <https://mattermost.atlassian.net/browse/MM-19555>`_
+- **v4.3.0, released 2019-10-17**
+ - Original v4.3.0 release
+
+**Note:** Mattermost v4.3.0 contains medium level security fixes. `Upgrading <http://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://about.mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://www.mattermost.org/responsible-disclosure-policy/>`__.
+
+**Breaking Change** 
+
+The Mattermost Desktop v4.3.0 release includes a change to how desktop notifications are sent from non-secure URLs (http://). Organizations using non-secure Mattermost Servers (http://) will need to update to Mattermost Server versions 5.16.0+, 5.15.1, 5.14.4 or 5.9.5 (ESR) to continue receiving desktop notifications when using Mattermost Desktop v4.3.0 or later.
+
+Improvements
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Added support for maintaining a user's online status while the desktop app is in the background but the user is interacting with their computer. Requires Mattermost Server v5.16.0, v5.15.1, v5.14.4 or later.
+- Updated spellchecker dictionaries for English.
+- Added support for exposing Webview Developer Tools via View Menu.
+- Improved the styling of the session expiry mention badge in the tab bar.
+- Improved the wording of the invalid certificate dialog.
+- Improved accessibility support for the menu bar items.
+
+Windows
+^^^^^^^^^^^^^
+
+- Added support for MSI installer (Beta) to allow deploying Mattermost desktop app to the computer program files (accessible by any user accounts rather than a specific user account on the machine).
+- Added support for Group Policies (GPO) to allow admins to set default servers and enable/disable the ability to add/remove servers.
+
+Mac
+^^^^^^^^^^^^^
+
+- Added a flag to enable MacOS dark mode title bar.
+
+Architectural Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Major version upgrade of Electron to v5.0.0. Electron is the underlying technology used to build the Desktop apps.
+
+Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Fixed an issue where opening the emoji picker froze the desktop app.
+- Fixed an issue where jumbo emoji didn't render for unsupported unicode emojis.
+- Fixed an issue where username and password were not being passed for HTTP basic authentication.
+- Fixed an issue where switching server tabs on app load caused a visual size glitch.
+- Fixed various desktop app notification issues.
+- Fixed an issue where the unread count changed after opening the quick switcher.
+- Fixed an issue where clicking on some links in System Console opened the links on the app itself.
+- Fixed an issue where the "Help" button opened in a new browser tab instead of below the textbox in the default system browser.
+- Fixed an issue where Mattermost opened both on fullscreen and on a smaller window when closing the app in fullscreen.
+- Fixed an issue to prevent the app from restarting in full-screen mode.
+- Fixed an issue where the dot and mention counts in server tab jewels were not centered.
+- Fixed an issue where the dot in notification badges was off centre.
+
+Windows
+^^^^^^^^^^^^^
+
+- Fixed an issue where Ctrl+M shortcut minimized the Windows app and sent a message.
+- Fixed an issue where clicking the tooltip button dismissed the tooltip.
+
+Mac
+^^^^^^^^^^^^^
+
+- Fixed an issue where using the red Close button to close the window caused a blank screen when the window was maximized.
+- Fixed an issue where ``Cmd + Option + Shift + v`` and ``Cmd + Shift + v`` didn't work on MacOS desktop app.
+- Fixed an issue where the timezones were incorrect in OSX High Sierra.
+
+Known Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Users are unable to zoom in/out on the desktop app. This bug will be fixed after a major version upgrade of Electron to v6.0.0.
+- ``CMD+Z`` doesn't undo on the Mac desktop app.
+- Unable to exit full screen Youtube videos.
+- "RIght-click + Copy" does not work.
+- Notifications appear in sequence rather than stacking on Windows.
+- Clicking on notifications when using the MSI installer(s) doesn't focus the app or the channel that triggered the notification.
+
+Contributors
+~~~~~~~~~~~~~~~
+
+Many thanks to all our contributors. In alphabetical order:
+
+- `asaadmahmood <https://github.com/asaadmahmood>`_, `aswathkk <https://github.com/aswathkk>`_, `crspeller <https://github.com/crspeller>`_, `deanwhillier <https://github.com/deanwhillier>`_, `devinbinnie <https://github.com/devinbinnie>`_, `esethna <https://github.com/esethna>`_, `jespino <https://github.com/jespino>`_, `JtheBAB <https://github.com/JtheBAB>`_, `manland <https://github.com/manland>`_, `mickmister <https://github.com/mickmister>`_, `MikeNicholls <https://github.com/MikeNicholls>`_, `PeterDaveHello <https://github.com/PeterDaveHello>`_, `sethitow <https://github.com/sethitow>`_, `steevsachs <https://github.com/steevsachs>`_, `svelle <https://github.com/svelle>`_, `wget <https://github.com/wget>`_, `Willyfrog <https://github.com/Willyfrog>`_, `yuya-oc <https://github.com/yuya-oc>`_
+
+Release v4.2.3
+----------------------------
+
+This release contains a bug fix for all platforms.
+
+- **Release date:** August 9, 2019
+- **Download Binary:** `Windows 32-bit <https://releases.mattermost.com/desktop/4.2.3/mattermost-setup-4.2.3-win32.exe>`__ | `Windows 64-bit <https://releases.mattermost.com/desktop/4.2.3/mattermost-setup-4.2.3-win64.exe>`__ | `Mac <https://releases.mattermost.com/desktop/4.2.3/mattermost-desktop-4.2.3-mac.dmg>`__ | `Linux 64-bit <https://releases.mattermost.com/desktop/4.2.3/mattermost-desktop-4.2.3-linux-x64.tar.gz>`__ 
+- **View Source Code:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.2.3>`__
+
+Bug Fixes
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Fixed an issue where the server URL entry prior to v4.2.2 could include malformed URLs that failed in v4.2.2 and later due to stricter validation. https://github.com/mattermost/desktop/pull/1015
+
+Release v4.2.2
+----------------------------
+
+This release contains a bug fix for all platforms.
+
+- **Release date:** August 7, 2019
+
+Bug Fixes
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Mattermost v4.2.2 contains high level security fixes. `Upgrading <https://mattermost.com/download/#mattermostApps>`_ is recommended. Details will be posted on our `security updates page <https://about.mattermost.com/security-updates/>`_ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://www.mattermost.org/responsible-disclosure-policy/>`_.
+
+Release v4.2.1
+----------------------------
+
+This release contains a bug fix for all platforms.
+
+- **Release date:** March 20, 2019
+- **Download Binary:** `Windows 32-bit <https://releases.mattermost.com/desktop/4.2.1/mattermost-setup-4.2.1-win32.exe>`__ | `Windows 64-bit <https://releases.mattermost.com/desktop/4.2.1/mattermost-setup-4.2.1-win64.exe>`__ | `Mac <https://releases.mattermost.com/desktop/4.2.1/mattermost-desktop-4.2.1-mac.dmg>`__ | `Linux 64-bit <https://releases.mattermost.com/desktop/4.2.1/mattermost-desktop-4.2.1-linux-x64.tar.gz>`__ 
+- **View Source Code:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.2.1>`__
+
+Bug Fixes
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Fixed an issue where some links opened in a smaller window in the Mattermost app. This issue only affected installations with a `Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`_ configured to use a subpath.
+
+Release v4.2.0
+----------------------------
+
+- **Release date:** November 27, 2018
+- **Download Binary:** `Windows 32-bit <https://releases.mattermost.com/desktop/4.2.0/mattermost-setup-4.2.0-win32.exe>`__ | `Windows 64-bit <https://releases.mattermost.com/desktop/4.2.0/mattermost-setup-4.2.0-win64.exe>`__ | `Mac <https://releases.mattermost.com/desktop/4.2.0/mattermost-desktop-4.2.0-mac.dmg>`__ | `Linux 64-bit <https://releases.mattermost.com/desktop/4.2.0/mattermost-desktop-4.2.0-linux-x64.tar.gz>`__ 
+- **View Source Code:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.2.0>`__
+
+**Note:** Mattermost v4.2.0 contains a high level security fix. `Upgrading <http://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://about.mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://www.mattermost.org/responsible-disclosure-policy/>`__.
+
+Improvements
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Added English (UK), Portuguese (BR), Spanish (ES) and Spanish (MX) to the spell checker.
+- Added `Ctrl/Cmd+F` shortcut to work as browser-like search.
+- Preserved case of first letter in spellcheck.
+- Added support for session expiry notification.
+
+Windows
+^^^^^^^^^^^^^
+
+- Set "app start on login" preference as enabled by default and synchronized its state with config.json.
+
+Mac
+^^^^^^^^^^^^^
+
+- Added **.dmg** package to support installation.
+- Added "Hide" option to Login Items in Preferences.
+
+Linux
+^^^^^^^^^^^^^
+
+- [tar.gz] Added support for using SVG icons for Linux application menus in place of PNG icons.
+- Updated categories in order to be listed under the appropriate submenu of the application starter.
+- Set "app start on login" preference as enabled by default and synchronized its state with config.json.
+- Added AppImage packages as an unofficial build.
+
+Architectural Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Major version upgrade of Electron to v2.0.12. Electron is the underlying technology used to build the Desktop apps.
+- Artifact names are now configured via `electron-builder.json`.
+
+Contributors
+~~~~~~~~~~~~~~~
+
+Many thanks to all our contributors. In alphabetical order:
+
+- `danmaas <https://github.com/danmaas>`__, `hmhealey <https://github.com/hmhealey>`__, `j1mc <https://github.com/j1mc>`__, `jasonblais <https://github.com/jasonblais>`__, `lieut-data <https://github.com/lieut-data>`__, `rodcorsi <https://github.com/rodcorsi>`__, `scherno2 <https://github.com/scherno2>`__, `sudheerDev <https://github.com/sudheerDev>`__, `svelle <https://github.com/svelle>`__, `torlenor <https://github.com/torlenor>`__, `yuya-oc <https://github.com/yuya-oc>`__
+
 Release v4.1.2
 ----------------------------
 
 This release contains a bug fix for all platforms.
 
 - **Release date:** May 25, 2018
-- **Download Binary:** `Windows 32-bit <https://releases.mattermost.com/desktop/4.1.2/mattermost-setup-4.1.2-win32.exe>`_ | `Windows 64-bit <https://releases.mattermost.com/desktop/4.1.2/mattermost-setup-4.1.2-win64.exe>`_ | `Mac <https://releases.mattermost.com/desktop/4.1.2/mattermost-desktop-4.1.2-mac.zip>`_ | `Linux 64-bit <https://releases.mattermost.com/desktop/4.1.2/mattermost-desktop-4.1.2-linux-x64.tar.gz>`_ 
-- **View Source Code:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/tree/v4.1.2>`_
+- **Download Binary:** `Windows 32-bit <https://releases.mattermost.com/desktop/4.1.2/mattermost-setup-4.1.2-win32.exe>`__ | `Windows 64-bit <https://releases.mattermost.com/desktop/4.1.2/mattermost-setup-4.1.2-win64.exe>`__ | `Mac <https://releases.mattermost.com/desktop/4.1.2/mattermost-desktop-4.1.2-mac.zip>`__ | `Linux 64-bit <https://releases.mattermost.com/desktop/4.1.2/mattermost-desktop-4.1.2-linux-x64.tar.gz>`__ 
+- **View Source Code:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/tree/v4.1.2>`__
 
 Bug Fixes
 ~~~~~~~~~~~~~~~
@@ -24,8 +390,8 @@ Release v4.1.1
 This release contains multiple bug fixes for Mac due to an incorrect build for v4.1.0. Windows and Linux apps are not affected.
 
 - **Release date:** May 17, 2018
-- **Download Binary:** `Windows 32-bit <https://releases.mattermost.com/desktop/4.1.1/mattermost-setup-4.1.1-win32.exe>`_ | `Windows 64-bit <https://releases.mattermost.com/desktop/4.1.1/mattermost-setup-4.1.1-win64.exe>`_ | `Mac <https://releases.mattermost.com/desktop/4.1.1/mattermost-desktop-4.1.1-mac.zip>`_ | `Linux 64-bit <https://releases.mattermost.com/desktop/4.1.1/mattermost-desktop-4.1.1-linux-x64.tar.gz>`_ 
-- **View Source Code:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/tree/v4.1.1>`_
+- **Download Binary:** `Windows 32-bit <https://releases.mattermost.com/desktop/4.1.1/mattermost-setup-4.1.1-win32.exe>`__ | `Windows 64-bit <https://releases.mattermost.com/desktop/4.1.1/mattermost-setup-4.1.1-win64.exe>`__ | `Mac <https://releases.mattermost.com/desktop/4.1.1/mattermost-desktop-4.1.1-mac.zip>`__ | `Linux 64-bit <https://releases.mattermost.com/desktop/4.1.1/mattermost-desktop-4.1.1-linux-x64.tar.gz>`__ 
+- **View Source Code:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/tree/v4.1.1>`__
 
 Bug Fixes
 ~~~~~~~~~~~~~~~
@@ -62,7 +428,7 @@ All Platforms
   - Fixed Mac and Linux crashing after toggling "Show Mattermost icon in menu bar" app setting.
 - Updated design for loading animation icon.
 - Improved appearance of server tabs.
-- Enabled `Certificate Transparency <https://www.certificate-transparency.org/what-is-ct>`_ verification in HTTPS.
+- Enabled `Certificate Transparency <https://www.certificate-transparency.org/what-is-ct>`__ verification in HTTPS.
 
 Windows
 ^^^^^^^^^^^^^
@@ -129,7 +495,7 @@ Contributors
 
 Many thanks to all our contributors. In alphabetical order:
 
-- `Autre31415 <https://github.com/Autre31415>`_, `dmeza <https://github.com/dmeza>`_, `hmhealey <https://github.com/hmhealey>`_, `jasonblais <https://github.com/jasonblais>`_, `kethinov <https://github.com/kethinov>`_, `lieut-data <https://github.com/lieut-data>`_, `lip-d <https://github.com/lip-d>`_, `mkraft <https://github.com/mkraft>`_, `yuya-oc <https://github.com/yuya-oc>`_
+- `Autre31415 <https://github.com/Autre31415>`__, `dmeza <https://github.com/dmeza>`__, `hmhealey <https://github.com/hmhealey>`__, `jasonblais <https://github.com/jasonblais>`__, `kethinov <https://github.com/kethinov>`__, `lieut-data <https://github.com/lieut-data>`__, `lip-d <https://github.com/lip-d>`__, `mkraft <https://github.com/mkraft>`__, `yuya-oc <https://github.com/yuya-oc>`__
 
 Release v4.0.1
 --------------
@@ -139,7 +505,7 @@ Release date: March 28, 2018
 This release contains multiple security updates for Windows, Mac and Linux, and it is highly recommended that users upgrade to this version.
 
 Architectural Changes
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 - Minor version upgrade of Electron from v1.7.11 to v1.7.13. Electron is the underlying technology used to build the Desktop apps.
 
@@ -262,7 +628,7 @@ Contributors
 
 Many thanks to all our contributors. In alphabetical order:
 
- - `csduarte <https://github.com/csduarte>`_, `dmeza <https://github.com/dmeza>`_, `jasonblais <https://github.com/jasonblais>`_, `jarredwitt <https://github.com/jarredwitt>`_, `wvds <https://github.com/wvds>`_, `yuya-oc <https://github.com/yuya-oc>`_
+ - `csduarte <https://github.com/csduarte>`__, `dmeza <https://github.com/dmeza>`__, `jasonblais <https://github.com/jasonblais>`__, `jarredwitt <https://github.com/jarredwitt>`__, `wvds <https://github.com/wvds>`__, `yuya-oc <https://github.com/yuya-oc>`__
 
 ----
 
@@ -295,7 +661,7 @@ All Platforms
 ^^^^^^^^^^^^^
 
 - Added an inline spell checker for English, French, German, Spanish, and Dutch.
-- Removed an obsolete "Display secure content only" option, following an `upgrade of the Electron app to Chrome v56 <https://github.com/electron/electron/commit/2e0780308c7ef2258422efd34c968091d7cd5b65>`_.
+- Removed an obsolete "Display secure content only" option, following an `upgrade of the Electron app to Chrome v56 <https://github.com/electron/electron/commit/2e0780308c7ef2258422efd34c968091d7cd5b65>`__.
 - Reset app window position when restoring it off-screen from a minimized state.
 - Improved page loading and app view rendering.
 
@@ -321,7 +687,7 @@ Windows
 ^^^^^^^^^^^^^
 
 - Focus is now set to the next top-level window after closing the main app window.
-- Fixed an issue where the app remained in the `"classic" ALT+TAB window switcher <https://www.askvg.com/how-to-get-windows-xp-styled-classic-alttab-screen-in-windows-vista-and-7/>`_ after closing the main app window.
+- Fixed an issue where the app remained in the `"classic" ALT+TAB window switcher <https://www.askvg.com/how-to-get-windows-xp-styled-classic-alttab-screen-in-windows-vista-and-7/>`__ after closing the main app window.
 
 Mac
 ^^^^^^^^^^^^^
@@ -341,36 +707,36 @@ All Platforms
 ^^^^^^^^^^^^^
 
 - `If you click twice on the tab bar, and then attempt to use the "Zoom in/out" to change font size, the app window doesn't render properly <https://github.com/mattermost/desktop/issues/334>`__
-- `Holding down CTRL, SHIFT or ALT buttons and clicking a channel opens a new application window <https://github.com/mattermost/desktop/issues/406>`_
-- `Unable to upload a SAML certificate file from the file upload dialog <https://github.com/mattermost/desktop/issues/497>`_
+- `Holding down CTRL, SHIFT or ALT buttons and clicking a channel opens a new application window <https://github.com/mattermost/desktop/issues/406>`__
+- `Unable to upload a SAML certificate file from the file upload dialog <https://github.com/mattermost/desktop/issues/497>`__
 
 Windows
 ^^^^^^^^^^^^^
 
-- [Windows 7] `Sometimes the app tries to render the page inside the app instead of in a new browser tab when clicking links <https://github.com/mattermost/desktop/issues/369>`_
+- [Windows 7] `Sometimes the app tries to render the page inside the app instead of in a new browser tab when clicking links <https://github.com/mattermost/desktop/issues/369>`__
 
 Mac
 ^^^^^^^^^^^^^
 
-- `After uploading a file with a keyboard shortcut, focus isn't set back to the message box <https://github.com/mattermost/desktop/issues/341>`_
+- `After uploading a file with a keyboard shortcut, focus isn't set back to the message box <https://github.com/mattermost/desktop/issues/341>`__
 - The application crashes when a file upload dialog is canceled without closing Quick Look.
 
 Linux (Beta)
 ^^^^^^^^^^^^^
 
-- [Ubuntu - 64 bit] `Right clicking taskbar icon and choosing **Quit** only minimizes the app <https://github.com/mattermost/desktop/issues/90#issuecomment-233712183>`_
-- [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/mattermost-server/issues/3589>`_
+- [Ubuntu - 64 bit] `Right clicking taskbar icon and choosing **Quit** only minimizes the app <https://github.com/mattermost/desktop/issues/90#issuecomment-233712183>`__
+- [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/mattermost-server/issues/3589>`__
 
 Contributors
 ~~~~~~~~~~~~
 
 Many thanks to all our contributors. In alphabetical order:
 
-- `jasonblais <https://github.com/jasonblais>`_, `jnugh <https://github.com/jnugh>`_, `yuya-oc <https://github.com/yuya-oc>`_
+- `jasonblais <https://github.com/jasonblais>`__, `jnugh <https://github.com/jnugh>`__, `yuya-oc <https://github.com/yuya-oc>`__
 
 Thanks also to those who reported bugs that benefited the release, in alphabetical order:
 
-- `esethna <https://github.com/esethna>`_ (`#524 <https://github.com/mattermost/desktop/issues/524>`_), `hanzei <https://github.com/hanzei>`_ (`#523 <https://github.com/mattermost/desktop/issues/523>`_)
+- `esethna <https://github.com/esethna>`__ (`#524 <https://github.com/mattermost/desktop/issues/524>`__), `hanzei <https://github.com/hanzei>`__ (`#523 <https://github.com/mattermost/desktop/issues/523>`__)
 
 ----
 
@@ -439,32 +805,32 @@ Known Issues
 All Platforms
 ^^^^^^^^^^^^^
 
- - `If you click twice on the tab bar, and then attempt to use the "Zoom in/out" to change font size, the app window doesn't render properly <https://github.com/mattermost/desktop/issues/334>`_
- - `After using CTRL+K, an added row appears in the message box <https://github.com/mattermost/desktop/issues/426>`_
- - `Holding down CTRL, SHIFT or ALT buttons and clicking a channel opens a new application window <https://github.com/mattermost/desktop/issues/406>`_
+ - `If you click twice on the tab bar, and then attempt to use the "Zoom in/out" to change font size, the app window doesn't render properly <https://github.com/mattermost/desktop/issues/334>`__
+ - `After using CTRL+K, an added row appears in the message box <https://github.com/mattermost/desktop/issues/426>`__
+ - `Holding down CTRL, SHIFT or ALT buttons and clicking a channel opens a new application window <https://github.com/mattermost/desktop/issues/406>`__
 
 Windows
 ^^^^^^^^^^^^^
 
- - [Windows 7] `Sometimes the app tries to render the page inside the app instead of in a new browser tab when clicking links <https://github.com/mattermost/desktop/issues/369>`_
+ - [Windows 7] `Sometimes the app tries to render the page inside the app instead of in a new browser tab when clicking links <https://github.com/mattermost/desktop/issues/369>`__
 
 Mac
 ^^^^^^^^^^^^^
 
- - `After uploading a file with a keyboard shortcut, focus isn't set back to the message box <https://github.com/mattermost/desktop/issues/341>`_
+ - `After uploading a file with a keyboard shortcut, focus isn't set back to the message box <https://github.com/mattermost/desktop/issues/341>`__
 
 Linux (Beta)
 ^^^^^^^^^^^^^
 
- - [Ubuntu - 64 bit] `Right clicking taskbar icon and choosing **Quit** only minimizes the app <https://github.com/mattermost/desktop/issues/90#issuecomment-233712183>`_
- - [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/mattermost-server/issues/3589>`_
+ - [Ubuntu - 64 bit] `Right clicking taskbar icon and choosing **Quit** only minimizes the app <https://github.com/mattermost/desktop/issues/90#issuecomment-233712183>`__
+ - [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/mattermost-server/issues/3589>`__
 
 Contributors
 ~~~~~~~~~~~~
 
 Many thanks to all our contributors. In alphabetical order:
 
- - `asaadmahmood <https://github.com/asaadmahmood>`_, `jasonblais <https://github.com/jasonblais>`_, `jnugh <https://github.com/jnugh>`_, `yuya-oc <https://github.com/yuya-oc>`_
+ - `asaadmahmood <https://github.com/asaadmahmood>`__, `jasonblais <https://github.com/jasonblais>`__, `jnugh <https://github.com/jnugh>`__, `yuya-oc <https://github.com/yuya-oc>`__
 
 ----
 
@@ -529,7 +895,7 @@ All Platforms
 Windows
 ^^^^^^^
 
--  [Windows 7] `Sometimes the app tries to render clicked linked inside the app, instead of in a new browser tab <https://github.com/mattermost/desktop/issues/369>`_
+-  [Windows 7] `Sometimes the app tries to render clicked linked inside the app, instead of in a new browser tab <https://github.com/mattermost/desktop/issues/369>`__
 
 Mac
 ^^^
@@ -540,8 +906,8 @@ Linux (Beta)
 ^^^^^^^^^^^^
 
 -  [Ubuntu - 64 bit] `Right clicking taskbar icon and choosing Quit only minimizes the
-   app <https://github.com/mattermost/desktop/issues/90#issuecomment-233712183>`_
--  [Ubuntu - 64 bit] `Direct message notification pop ups do not properly render <https://github.com/mattermost/mattermost-server/issues/3589>`_
+   app <https://github.com/mattermost/desktop/issues/90#issuecomment-233712183>`__
+-  [Ubuntu - 64 bit] `Direct message notification pop ups do not properly render <https://github.com/mattermost/mattermost-server/issues/3589>`__
 
 Contributors
 ~~~~~~~~~~~~
@@ -559,7 +925,7 @@ Many thanks to all our contributors. In alphabetical order:
 
 Thanks also to those who reported bugs that benefited the release, in alphabetical order:
 
-- ellisd (`#383 <https://github.com/mattermost/desktop/issues/383>`_), `it33 <https://github.com/it33>`_ (`#384 <https://github.com/mattermost/desktop/issues/384>`_), `jnugh <https://github.com/jnugh>`_ (`#392 <https://github.com/mattermost/desktop/issues/392>`_), `lfbrock <https://github.com/lfbrock>`_ (`#382 <https://github.com/mattermost/desktop/issues/382>`_), `yuya-oc <https://github.com/yuya-oc>`_ (`#391 <https://github.com/mattermost/desktop/issues/391>`_)
+- ellisd (`#383 <https://github.com/mattermost/desktop/issues/383>`__), `it33 <https://github.com/it33>`__ (`#384 <https://github.com/mattermost/desktop/issues/384>`__), `jnugh <https://github.com/jnugh>`__ (`#392 <https://github.com/mattermost/desktop/issues/392>`__), `lfbrock <https://github.com/lfbrock>`__ (`#382 <https://github.com/mattermost/desktop/issues/382>`__), `yuya-oc <https://github.com/yuya-oc>`__ (`#391 <https://github.com/mattermost/desktop/issues/391>`__)
 
 --------------
 
@@ -664,7 +1030,7 @@ Linux (Beta)
 ^^^^^^^^^^^^
 
 -  [Ubuntu - 64 bit] Right clicking taskbar icon and choosing **Quit** only minimizes the app
--  [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/mattermost-server/issues/3589>`_
+-  [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/mattermost-server/issues/3589>`__
 
 Contributors
 ~~~~~~~~~~~~
@@ -787,7 +1153,7 @@ Linux (Beta)
 ^^^^^^^^^^^^^
 
 -  [Ubuntu - 64 bit] Right clicking taskbar icon and choosing **Quit** only minimizes the app
--  [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/mattermost-server/issues/3589>`_
+-  [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/mattermost-server/issues/3589>`__
 
 Contributors
 ~~~~~~~~~~~~
@@ -905,7 +1271,7 @@ All platforms
 -  Should execute following command to take over ``config.json``.
 
    -  Windows:
-      ``mkdir %APPDATA%\Mattermost & copy %APPDATA%\electron-mattermost\config.json %APPDATA%\Mattermost\config.json``
+      ``mkdir %APPDATA%\Mattermost and copy %APPDATA%\electron-mattermost\config.json %APPDATA%\Mattermost\config.json``
    -  OS X:
       ``ditto ~/Library/Application\ Support/electron-mattermost/config.json ~/Library/Application\ Support/Mattermost/config.json``
    -  Linux:

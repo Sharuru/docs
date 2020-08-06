@@ -1,51 +1,40 @@
+.. _image-proxy:
+
 Image Proxy
 ================================
 
-Using image proxies means that users make only secure requests. By allowing image requests to go straight to third-party
-servers, tracking pixels is allowed. Users can put invisible images in posts that logs time and location data
-for every user that views the post. An image proxy protects user privacy by eliminating this direct interaction with 
-third-party servers.
+Using an image proxy means that all requests for images made by Mattermost clients will go through the proxy instead of contacting third-party servers directly. This helps protect user privacy by preventing third-party servers from tracking who views an image. This also prevents the use of tracking pixels (invisible images that do the same thing without the user even seeing an image).
 
-Proxy servers also provide a layer of caching, and can be made faster and more reliable than third-party sites. This caching 
-also helps preserve posts by protecting them from dead images.
+Certain proxy servers also provide a layer of caching which can make loading images faster and more reliable. This caching also helps preserve posts by protecting them from dead images.
 
-Configuration Keys
-~~~~~~~~~~~~~~~~~
+When enabled, the image proxy needs to be publicly accessible to both the Mattermost client and server.
 
-Three configuration keys are included: ``ImageProxyType``, ``ImageProxyURL`` and ``ImageProxyOptions``. When these
-keys are configured, posts served to the client will have their markdown modified such that all images are 
-loaded through a proxy.
+Mattermost clients will use the image proxy to load all external images. The Mattermost server will use the image proxy when possible, but will not use it when requesting content that may not be an image, such as for `image previews of plaintext URLs <https://github.com/mattermost/mattermost-server/issues/11857>`_.
 
-Image Proxy Type
-........................
+An image proxy can be configured in **System Console > Environment > Image Proxy** (or **System Console < Files > Storage** in versions prior to 5.12).
 
-Configure an image proxy to load all Markdown images through a proxy. The image proxy prevents users from making insecure image requests to third-party sites and provides caching for increased performance.
+Local Image Proxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Image Proxy URL
-........................
+The local image proxy is available as part of the Mattermost server deployment. When using the local image proxy, images are served to clients through the server which helps anonymize users. If SSL is enabled on the server, it provides a secure connection. This method does not offer any caching behavior.
 
-URL of your image proxy server.
+.. note:: 
+   With the local image proxy enabled, requests for images hosted on the local network are now affected by the ``AllowUntrustedInternalConnections`` setting. See `documentation <https://docs.mattermost.com/administration/config-settings.html#allow-untrusted-internal-connections-to>`_ for more information or if you are seeing unintentionally blocked images.
 
-Image Proxy Options
-........................
+.. _atmos-camo:
 
-Additional options for basic image adjustments such as the URL signing key. Contact your image proxy 
-service provider to learn more about what options are supported.
+atmos/camo Image Proxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Setup Guide
-~~~~~~~~~~~~~~~~~
+The `atmos/camo <https://github.com/atmos/camo>`_ image proxy is a standalone image proxy that can be deployed separately from the Mattermost server. It provides additional configuration options over the built-in image proxy, and it can also be used if isolation between the Mattermost server and image proxy is desired.
 
-This guide gives an example of how to set up an image proxy using ``atmos/camo``:
+Once you've deployed an ``atmos/camo`` (https://github.com/atmos/camo) instance, you must specify the **Remote Image Proxy URL** and **Remote Image Proxy Options** settings. The **Remote Image Proxy Options** should be set to the image proxy's shared key which is specified with the ``CAMO_KEY`` environment variable used when setting up the image proxy.
 
-Deploy an ``atmos/camo`` (https://github.com/atmos/camo) instance to image-proxy.mattermost.com and update the 
-configuration in the system console. For example:
- - "ImageProxyType": "atmos/camo",
- - "ImageProxyURL": "https://image-proxy.mattermost.com",
- - "ImageProxyOptions": the secret string that was used as the ``CAMO_KEY`` for the atmos/camo deployment.
+For example, if the image proxy is located at ``https://image-proxy.mattermost.com``, it would be configured as follows:
+
+ - **Image Proxy Type**: ``atmos/camo``
+ - **Remote Image Proxy URL**: ``https://image-proxy.mattermost.com``
+ - **Remote Image Proxy Options**: ``CAMO_KEY``, which is the secret string used for the sample ``atmos/camo`` deployment.
 
 .. image:: ../images/image-proxy.png
-
-The URL will be replaced with something similar to the following: https://image-proxy.mattermost.com/d7b4022717e8d015440cd70183b81196298b9453/687474703a2f2f692e726564642e69742f36636f687964636b6b363530312e6a7067 (See `https://github.com/atmos/camo <https://github.com/atmos/camo>`_).
   
-Next, if you post a message with an image, you will get a proxied image in your post. This will ensure that every image
-is downloaded via HTTPS.

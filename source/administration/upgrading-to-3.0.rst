@@ -1,7 +1,7 @@
 Upgrading to version 3.0
 ========================
 
-Use these instructions if you are upgrading from 2.0.0, 2.1.0, or 2.2.0. If you are upgrading from a version earlier than 2.0.0, you must first `upgrade to version 2.0 <../administration/upgrading-to-2.0.html>`_. 
+Use these instructions if you are upgrading from 2.0.0, 2.1.0, or 2.2.0. If you are upgrading from a version earlier than 2.0.0, you must first `upgrade to version 2.0 <../administration/upgrading-to-2.0.html>`__. 
 
 You must upgrade to 3.0 before upgrading to the latest version of Mattermost.
 
@@ -40,7 +40,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
 **Upgrading to version 3.0**
 
-1. Read the following post in the Mattermost forum which describes the steps that were taken to ensure success when upgrading to version 3.0. `Mattermost 3.0 upgrade example <https://forum.mattermost.org/t/mattermost-3-0-upgrade-example/1541>`_
+1. Read the following post in the Mattermost forum which describes the steps that were taken to ensure success when upgrading to version 3.0. `Mattermost 3.0 upgrade example <https://forum.mattermost.org/t/mattermost-3-0-upgrade-example/1541>`__
 
 2. In a terminal window on the server that hosts Mattermost Server, change to your home directory. If any, delete files and directories that might still exist from a previous download.
 
@@ -48,10 +48,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
 3. Download version 3.0.3.
 
-  Enterprise Edition
-    ``wget https://releases.mattermost.com/3.0.3/mattermost-enterprise-3.0.3-linux-amd64.tar.gz``
-  Team Edition
-    ``wget https://releases.mattermost.com/3.0.3/mattermost-team-3.0.3-linux-amd64.tar.gz``
+  ``wget https://releases.mattermost.com/3.0.3/mattermost-enterprise-3.0.3-linux-amd64.tar.gz``
 
 4. Extract the Mattermost Server files.
 
@@ -59,9 +56,9 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
 5. Stop Mattermost Server.
 
-  On Ubuntu 14.04 and RHEL 6.6: ``sudo service mattermost stop``
+  On Ubuntu 14.04 and RHEL 6: ``sudo service mattermost stop``
 
-  On Ubuntu 16.04 and RHEL 7.1: ``sudo systemctl stop mattermost``
+  On Ubuntu 16.04 and RHEL 7: ``sudo systemctl stop mattermost``
 
 6. Back up your data and application.
   a. Back up your database using your organization’s standard procedures for backing up MySQL or PostgreSQL.
@@ -98,9 +95,9 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
 11. Start Mattermost server.
 
-  On Ubuntu 14.04 and RHEL 6.6: ``sudo service mattermost start``
+  On Ubuntu 14.04 and RHEL 6: ``sudo service mattermost start``
 
-  On Ubuntu 16.04 and RHEL 7.1: ``sudo systemctl start mattermost``
+  On Ubuntu 16.04 and RHEL 7: ``sudo systemctl start mattermost``
 
 12. Upgrade your ``config.json`` schema: Open the System Console and make a change and then save the change. Your current settings are preserved, and new settings are added with default values.
 

@@ -5,14 +5,14 @@ Statistics on users, posts and channels are tracked for each system and team. En
 
 .. note::
 
-  To maximize performance for large Enterprise deployments, statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are disabled. You can re-enable them by changing the ``MaxUsersForStatistics`` value `in config.json <https://docs.mattermost.com/administration/config-settings.html#maximum-users-for-statistics>`_.
+  To maximize performance for large Enterprise deployments, statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are disabled. You can re-enable them by changing the ``MaxUsersForStatistics`` value `in config.json <https://docs.mattermost.com/administration/config-settings.html#maximum-users-for-statistics>`__.
 
-For advanced metrics for Enterprise deployments, `see performance monitoring documentation to learn more <http://docs.mattermost.com/deployment/metrics.html>`_.
+For advanced metrics for Enterprise deployments, `see performance monitoring documentation to learn more <http://docs.mattermost.com/deployment/metrics.html>`__.
 
 Site Statistics
 -----------------
 
-System statistics are viewable under **System Console > Site Statistics**. The data shown here is a cumulative sum across all teams on the system.
+System statistics are viewable under **System Console > Site Statistics** in prior versions or **System Console > Reporting** in versions after 5.12. The data shown here is a cumulative sum across all teams on the system.
 
 Total Users
     The total number of active accounts created on your system. Excludes deactivated accounts.
@@ -27,13 +27,16 @@ Total Posts
     The total number of posts made in all the teams on your system, including deleted posts and posts made using automation.
 
 Daily Active Users
-  The total number of users who viewed the Mattermost site in the last 24 hours.
+  The total number of users who viewed the Mattermost site in the last 24 hours. Excludes bot users as of v5.14.
 
 Monthly Active Users
-  The total number of users who viewed the Mattermost site in the last 30 days.
+  The total number of users who viewed the Mattermost site in the last 30 days. Excludes bot users as of v5.14.
 
 Total Posts (graph)
     The total number of posts made on a certain day in all the teams on your system, including deleted posts and posts made using automation.
+
+Total Posts from Bots (graph)
+    The total number of posts made by a `bot account <https://docs.mattermost.com/developer/bot-accounts.html>`_ on a certain day in all the teams on your system, including deleted posts and posts made using automation.
 
 Active Users with Posts (graph)
     Users who made a post on a certain day in all the teams on your system, including system messages posted from the user's account.
@@ -62,7 +65,7 @@ Master DB Conns
     The number of active connections currently on your master database.
 
 Replica DB Conns
-    The number of active connections currently on one or more of `your read replica databases <https://docs.mattermost.com/deployment/cluster.html#database-configuration>`_.
+    The number of active connections currently on one or more of `your read replica databases <https://docs.mattermost.com/deployment/cluster.html#database-configuration>`__.
 
 Channel Types
     This chart displays the number of public channels and private channels in a visual format, including channels that might have been deleted.
@@ -98,3 +101,8 @@ Recent Active Users
 
 Newly Created Users
     Most recent users who have joined the team.
+
+Troubleshooting
+-----------------
+
+If the statistics page is loading endlessly and you get an error message saying "Not enough data for a meaningful representation", check whether you are using an ad blocker. An ad blocker can prevent this page from loading data. To test this, temporarily disable your ad blocker, or view the page in a browser without an ad blocker installed.

@@ -125,7 +125,7 @@ E.g.: Active Directory on Windows Server 2016.
 #### Is there a limit on the number of users the LDAP server can return in a single query? If so, have you set the Maximum Page Size in Mattermost?
 Many LDAP servers have an upper limit on the number of users returned, so they might be hitting that limit. An error will appear in the logs usually informing of this case, but it's good to try anyway. 
 
-#### Can you send an example user from you system? 
+#### Can you send an example user from your system? 
 ldapsearch command format is preferred.
 
 #### Is the server properly licensed?
@@ -137,11 +137,26 @@ Check the licensing page in the system console.
 
 #### Are there any errors in the Mattermost logs?
 
-#### Send us your config.json.
+#### Send us your config.json. For example:
+```
+grep "TLS" /opt/mattermost/config/config.json 
+        "TLSCertFile": "",
+        "TLSKeyFile": "",
+        "TLSMinVer": "1.2",
+        "TLSStrictTransport": false,
+        "TLSStrictTransportMaxAge": 63072000,
+        "TLSOverwriteCiphers": [],
+        "ConnectionSecurity": "STARTTLS",
+```
 
 #### Send your proxy configuration if you are using one.
 
 #### Have you followed one of the setup guides?
+
+#### Check the status of the SSL certificate being used on Mattermost. For example:
+```
+echo | openssl s_client -showcerts -connect <URL>:443 -CApath /etc/ssl/ && echo | openssl s_client -connect <URL>:443 2>/dev/null | openssl x509 -noout -dates -text
+```
 
 ## GitLab Issues
 
@@ -165,13 +180,23 @@ Check the licensing page in the system console.
 
 #### Other debugging information
 
-Useful commands (may need to be run with sudo):
-- `gitlab-ctl reconfigure` - Update config.json and other configuration files, then restart all services (including Mattermost).
-- `gitlab-ctl <stop/start/restart> mattermost` - Stop/start/restart Mattermost.
-- `gitlab-ctl status mattermost` - Check if Mattermost is running. The message printed will start with `run` if it's running or `down` if it's not.
-- `gitlab-ctl tail mattermost` - Watch all Mattermost log files. Press Ctrl+C to exit.
-- `gitlab-ctl <stop/start/restart/status/tail> <nginx/postgresql/redis/etc>` - Control, view status, or view logs of a different service.
-- `sudo -u gitlab-psql /opt/gitlab/embedded/bin/psql --port 5432 -h /var/opt/gitlab/postgresql -d mattermost_production` - Access the embedded Mattermost database
+Useful commands:
+- `sudo gitlab-ctl reconfigure` - Update `config.json` and other configuration files, then restart all services (including Mattermost).
+- `sudo gitlab-ctl <stop/start/restart> mattermost` - Stop/start/restart Mattermost.
+- `sudo gitlab-ctl status mattermost` - Check if Mattermost is running. The printed output will start with `run` if it's running or `down` if it's not.
+- `sudo gitlab-ctl tail mattermost` - Watch all Mattermost log files. Press CTRL+C to exit.
+- `sudo gitlab-ctl <stop/start/restart/status/tail> <nginx/postgresql/redis/etc>` - Control, view status, or view logs of a different service.
+- `sudo less /var/opt/gitlab/mattermost/config.json` - View the Mattermost `config.json` directly (use the arrow keys to scroll, press Q to exit).
+- `sudo gitlab-psql -d mattermost_production` - Access the embedded Mattermost database.
+- `sudo gitlab-rails console production` - Access the GitLab admin console (press CTRL+D to exit).
+   - You can then carry out commands such as updating a user’s password:
+
+     ```
+     user = User.find_by(email: 'admin@local.host')
+     user.password = 'secret_pass'
+     user.password_confirmation = 'secret_pass'
+     user.save!
+     ```
 
 File locations:
 - Configuration files are located at `/etc/gitlab/gitlab.rb` and `/var/opt/gitlab/mattermost/config.json`.

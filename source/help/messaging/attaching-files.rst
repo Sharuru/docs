@@ -6,12 +6,12 @@ team to visually understand your ideas. Sharing videos, voice recordings,
 screenshots, and photos will make your messages more effective and clear.
 
 How to Attach Files
-------------------
+-------------------
 You can attach files in the following ways:
 
 -  Use the attachment icon - click the paperclip icon inside the message input box
 -  Drag and Drop
--  Paste from the clipboard - this feature is supported in Chrome and Edge browsers
+-  Paste from the clipboard
 
 File Previewer
 --------------
@@ -35,10 +35,10 @@ system. To share an attachment, click the thumbnail of an attachment, then click
 **Get Public Link**.
 
 .. Tip::
-If **Get Public Link** is not visible in the file previewer
-and you prefer that the feature is enabled, you can request your System 
-Admin to enable the feature from the System Console under 
-**Security > Public Links**.
+  If **Get Public Link** is not visible in the file previewer
+  and you prefer that the feature is enabled, you can request your System
+  Admin to enable the feature from the System Console under
+  **Security > Public Links**.
 
 Viewing Media:
 ~~~~~~~~~~~~~~~~~~~~~
@@ -52,7 +52,7 @@ The following media formats are supported on most browsers:
 Other document previews (Word, Excel, PPT) are not yet supported.
 
 Attachment Limits and Sizes
----------------------
+---------------------------
 Please note that Mattermost supports a maximum of five (5) attached 
 files per post.
 

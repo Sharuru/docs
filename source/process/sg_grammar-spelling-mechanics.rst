@@ -13,7 +13,7 @@ Paragraphs and Sentences
 
 Paragraphs should express one idea or topic. Long paragraphs are sometimes difficult to read on screen, so try to keep them to five sentences or less. Short paragraphs are easier for people to scan quickly.
 
-Try to keep sentences to 25 words or less in length. Short, single-clause sentences are often easier to understand and easier to translate. Tools such as the `Hemingway writing app <http://www.hemingwayapp.com/>`_ can be helpful in evaluating readability. Target a readability level of Grade 6.
+Try to keep sentences to 25 words or less in length. Short, single-clause sentences are often easier to understand and easier to translate. Tools such as the `Hemingway writing app <http://www.hemingwayapp.com/>`__ can be helpful in evaluating readability. Target a readability level of Grade 6.
 
 Tone
 ~~~~~
@@ -75,13 +75,13 @@ Avoid
 Capitalization
 --------------
 
-Use title case for page titles and section titles.
+Use sentence case for page titles, headings, and section titles. 
 
-Title case
-  Grammar, Spelling, and Mechanics
-
-Sentence case
-  Language and spelling
+Sentence case example - document title
+  "AppConfig for EMM solutions with Mattermost mobile apps"
+  
+Sentence case example - heading
+  "Multiple read replicas (Enterprise Edition)"
 
 Numbers
 -------

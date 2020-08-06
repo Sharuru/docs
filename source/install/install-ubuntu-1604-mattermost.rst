@@ -11,7 +11,7 @@ Assume that the IP address of this server is 10.10.10.2.
 
 1. Log in to the server that will host Mattermost Server and open a terminal window.
 
-2. Download `the latest version of the Mattermost Server <https://about.mattermost.com/download/>`_. In the following command, replace ``X.X.X`` with the version that you want to download:
+2. Download `the latest version of the Mattermost Server <https://about.mattermost.com/download/>`__. In the following command, replace ``X.X.X`` with the version that you want to download:
 
   ``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz``
 
@@ -50,7 +50,9 @@ Assume that the IP address of this server is 10.10.10.2.
     2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values. Also make sure that the database name is ``mattermost`` instead of ``mattermost_test``:
       ``"mmuser:<mmuser-password>@tcp(<host-name-or-IP>:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s"``
 
-8. Test the Mattermost server to make sure everything works.
+8. Also set ``"SiteURL"`` to the full base URL of the site (e.g. ``"https://mattermost.example.com"``).
+
+9. Test the Mattermost server to make sure everything works.
 
     a. Change to the ``mattermost`` directory:
       ``cd /opt/mattermost``
@@ -59,7 +61,7 @@ Assume that the IP address of this server is 10.10.10.2.
 
   When the server starts, it shows some log information and the text ``Server is listening on :8065``. You can stop the server by pressing CTRL+C in the terminal window.
 
-9. Setup Mattermost to use *systemd* for starting and stopping.
+10. Setup Mattermost to use *systemd* for starting and stopping.
 
   a. Create a *systemd* unit file:
     ``sudo touch /lib/systemd/system/mattermost.service``
@@ -71,7 +73,7 @@ Assume that the IP address of this server is 10.10.10.2.
     Description=Mattermost
     After=network.target
     After=postgresql.service
-    Requires=postgresql.service
+    BindsTo=postgresql.service
 
     [Service]
     Type=notify
@@ -92,10 +94,10 @@ Assume that the IP address of this server is 10.10.10.2.
 
   .. note::
     If you have installed MySQL or PostgreSQL on a dedicated server, then you need to
-     
-      - remove ``After=postgresql.service`` and ``Requires=postgresql.service`` or ``After=mysql.service`` and ``Requires=mysql.service`` lines in the ``[Unit]`` section, and 
+
+      - remove ``After=postgresql.service`` and ``BindsTo=postgresql.service`` or ``After=mysql.service`` and ``BindsTo=mysql.service`` lines in the ``[Unit]`` section, and
       - replace the ``WantedBy=postgresql.service`` or ``WantedBy=mysql.service`` line in the ``[Install]`` section with ``WantedBy=multi-user.target``
-    
+
     or the Mattermost service will not start.
 
   .. note::

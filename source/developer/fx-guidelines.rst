@@ -3,7 +3,7 @@ User Experience Guidelines
 
 The purpose of the Mattermost User Experience Guidelines ("UX Guidelines") is to deliver a level of usability and consistency that turns users of Mattermost software into fans of the Mattermost experience.
 
-If you're interested in contributing to design discussions, please join the `Mattermost UX Design channel to discuss <https://pre-release.mattermost.com/core/channels/ux-design>`_.
+If you're interested in contributing to design discussions, please join the `Mattermost UX Design channel to discuss <https://community.mattermost.com/core/channels/ux-design>`__.
 
 .. contents::
    :local:
@@ -33,9 +33,9 @@ There is no such thing as "user error"--it’s always our fault as product desig
 
 When our product is correct, users are never confused. Everything we do--features, interface layout, labeling, help text and documentation--needs to make sense in the mind of the user, even if it means occasionally oversimplifying how things technically work.
 
-If a user doesn’t understand how to use a feature, all the underlying effort and code is wasted. The “Obvious” design principle also flows through to our `Documentation Guidelines <http://www.mattermost.org/documentation-guidelines/>`_.
+If a user doesn’t understand how to use a feature, all the underlying effort and code is wasted. The “Obvious” design principle also flows through to our `Documentation Guidelines <http://www.mattermost.org/documentation-guidelines/>`__.
 
-Given `Hick’s Law <https://en.wikipedia.org/wiki/Hick%27s_law>`_, core functionality should be apparent, and advanced functionality should be possible via sub-menus and be well documented and tested. Functionality that is not fundamental to the product purpose should be ruthlessly omitted.
+Given `Hick’s Law <https://en.wikipedia.org/wiki/Hick%27s_law>`__, core functionality should be apparent, and advanced functionality should be possible via sub-menus and be well documented and tested. Functionality that is not fundamental to the product purpose should be ruthlessly omitted.
 
 Use design patterns familiar to our audience--general non-technical users for the core messaging experience, IT administrators for configuration experience, developers for the developer experience. Mattermost UX should be drawn from patterns and derivations of other experiences in a mix of familiar approaches. Remember: Software is an invention--there's nothing "intuitive" about it, there is only what is familiar.
 
@@ -61,27 +61,63 @@ That said, forgiving does not mean allowing the product to be used incorrectly b
 Technical Guidelines
 ********************
 
+Plugins
+-----------------
+
+By default, every new feature should be a plugin. Why?
+
+ - Isolates complexity.
+ - Disabled by default and must be turned on by a System Admin.
+ - Grows the plugin ecosystem with better support for external plugins.
+
+Reasons you might not want to write a plugin:
+
+ - The feature requires high performance access.
+ - The feature would be used or extended by a plugin (e.g. bot accounts or Account Settings modal).
+ - The feature would be used by every Mattermost instance (e.g. flagged messages, replies).
+
+Reasons to write a plugin:
+
+ - To customize the Mattermost user interface.
+ - To extend Mattermost functionality to meet a specific, complex requirement.
+ - To build integrations that are managed by your Mattermost server.
+ - To prototype a new feature with a plugin.
+
 Bootstrap Classes
 -----------------
 
-Since we’re using `bootstrap <http://getbootstrap.com/>`_, try to utilize `bootstrap classes <http://getbootstrap.com/css/>`_ as much as possible rather than creating new styles or using inline styles.
+Since we’re using `bootstrap <http://getbootstrap.com/>`__, try to utilize `bootstrap classes <http://getbootstrap.com/css/>`__ as much as possible rather than creating new styles or using inline styles.
 
 Custom Styles
 -------------
 
-We’re using `BEM methodology <https://en.bem.info/method/>`_  and would advise everyone to do so when creating new classes or ids. There are many places in our app that currently don’t follow BEM, but we’re trying to improve the codebase. `Here <http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/>`_ is a brief overview of the BEM syntax.
+We’re using `BEM methodology <https://en.bem.info/method/>`__  and would advise everyone to do so when creating new classes or ids. There are many places in our app that currently don’t follow BEM, but we’re trying to improve the codebase. `Here <http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/>`__ is a brief overview of the BEM syntax.
 
 -----
 
-Minimum Display Requirements
-****************************
+Screen and Content Dimensions
+*****************************
 
-Desktop
--------
+Web/Desktop App
+-------------------
 
-- **Minimum screen resolution:** 1280 x 800
+The webapp supports two main modes of displaying the app: desktop view and mobile/tablet view. The app is primarily used in desktop view, but when the screen is 768 pixels or less wide, it switches to mobile view. The mobile view is also used in mobile browsers and the Classic App.
 
-- **Color Depth:** 16.7M colors
+For desktop view:
+
+ - The target screen sizes are 1280 x 800 or 1920 x 1080. Note that the space available for content will be smaller than this due to the the frame of the window and system-specific components like the taskbar on Windows. For example, the desktop app on Windows 10 only has a usable height of 717 pixels when the tab bar is visible at 1280 x 800 resolution.
+ - The minimum content size is 769 x 600. When the width is 768 or less, the app switches to mobile view. When the height is below 600, UI elements may become misplaced.
+
+For mobile view:
+
+ - The minimum and target content size is 320 x 460, matching the available space when the app is opened in Safari on an iPhone 5.
+
+Mobile App
+----------
+
+At this time, the mobile app only supports an equivalent of mobile view. In that view:
+
+ - The minimum and target content size is 320 x 568, matching the screen size of an iPhone 5. Note that you'll still need to leave space for system-specific components like the status bar or soft buttons on iOS, but much more of the screen is usable.
 
 -----
 
@@ -212,7 +248,6 @@ The color of the on_hover state should be the same as in active state, with opac
 |
 ---------------------------
 
-
 Display: Icons
 --------------
 
@@ -241,7 +276,7 @@ Display: Instructions
 
 Instructions, such as “A password reset link has been sent to ``you@email.com`` for your account. Please check your inbox.”, should be displayed as sentences ending in periods. One-line links, such as “Find it here”, should not end in periods or commas, but question marks are okay.
 
-Instructions containing a link to an external resource (ie: a blog article or docs.mattermost.com), should not be hard-coded. A redirect page from about.mattermost.com should be used in product instructions. Redirect pages should be formatted as ``https://about.mattermost.com/default-[SUBJECT]``. An about.mattermost.com page can be requested from the Product team at Mattermost. 
+Instructions that contain a link to an external resource (e.g.: a blog article or docs.mattermost.com), should link to a redirect page and not be hard-coded. Redirect pages should be formatted as ``https://mattermost.com/default-[SUBJECT]``. If the page you're linking to doesn't exist, a new mattermost.com page can be requested from the Product team at Mattermost.
 
     **Example:**
 
@@ -262,6 +297,16 @@ Instructions containing a link to an external resource (ie: a blog article or do
 
 ---------------------------
 
+Display: Tooltips
+---------------------------
+
+Tooltip text may be title case or sentence case depending on its context.
+
+- Tooltips should be title case if the tooltip is a noun, e.g. "Pinned Posts", or "Flagged Posts".
+- Tooltips should be sentence case if they are declaring an action, e.g. "Flag for follow up", or "Create new private channel".
+
+|
+---------------------------
 
 Display: Username display
 ---------------------------
@@ -279,7 +324,7 @@ Examples of where an @ icon should precede the username are as follows:
 Display: Number of Choices
 --------------------------
 
-To simplify decisions, when practical, limit the number of choices to 3 or 4, and add separators or headings between logical groups. See `Hick’s Law <https://en.wikipedia.org/wiki/Hick%27s_law>`_ for background on why this helps.
+To simplify decisions, when practical, limit the number of choices to 3 or 4, and add separators or headings between logical groups. See `Hick’s Law <https://en.wikipedia.org/wiki/Hick%27s_law>`__ for background on why this helps.
 
 Example:
 
@@ -340,7 +385,7 @@ Error messages should not:
 Feedback: System Notice
 ------------------------
 
-On occasion, Mattermost users may encounter a system notice generated by Mattermost as part of a recent release. The system notice should be communicated to the user via a pop-over message in the bottom right of the screen, and should follow the design principles of `Fast, Obvious, Forgiving <https://docs.mattermost.com/developer/fx-guidelines.html#fast-obvious-forgiving>`_.
+On occasion, Mattermost users may encounter a system notice generated by Mattermost as part of a recent release. The system notice should be communicated to the user via a pop-over message in the bottom right of the screen, and should follow the design principles of `Fast, Obvious, Forgiving <https://docs.mattermost.com/developer/fx-guidelines.html#fast-obvious-forgiving>`__.
 
 Notice messages should:
 
@@ -368,7 +413,7 @@ Notice messages should not:
     ..  image:: ../images/systemnotice2.png
         :alt: Bad System Notice
 
-   
+
     Correct:
         This is an example of a good system notice:
 
@@ -546,7 +591,7 @@ Items in a menu should be grouped together based on the category they belong to.
 -----
 
 Notifications: Header Bar
----------------------
+-------------------------
 
 The header bar appears as a dropdown bar from the top of the screen. The header bar:
 
@@ -608,7 +653,7 @@ Markdown rendering in Mattermost is designed to be a fast, obvious and forgiving
 
 While we intend to eventually document all the variations from GitHub markdown, until that is complete we consider any variation in rendering from the current release of Mattermost to be a regression that should either be fixed prior to the next release, or documented here.
 
-Currently the `/test tool <https://github.com/mattermost/mattermost-server/tree/master/tests>`_ can be used for testing Mattermost markdown versus GitHub markdown.
+Currently the `/test tool <https://github.com/mattermost/mattermost-server/tree/master/tests>`__ can be used for testing Mattermost markdown versus GitHub markdown.
 
 -----
 

@@ -1,18 +1,21 @@
 Formatting Text
 ===============
 
-Markdown makes it easy to format messages. Type a message as you normally would, and use these rules to render it with special formatting.
+Markdown makes it easy to format messages. Type a message as you normally would and use these rules to render it with special formatting techniques.
+
+For a Layman's guide to Markdown on Mattermost, `see this blog post <https://mattermost.com/blog/laymans-guide-to-markdown-on-mattermost/>`_.
 
 Emojis
 ------
 
-Open the emoji autocomplete by typing ``:`` followed by two characters. A full list of emojis can be found `here <http://www.emoji-cheat-sheet.com/>`_. It is also possible to create your own `Custom Emoji <http://docs.mattermost.com/help/settings/custom-emoji.html>`_ if the emoji you want to use doesn't exist.
+Open the emoji autocomplete by typing ``:`` followed by two characters of the word describing the emoji. It is also possible to create your own `Custom Emoji <http://docs.mattermost.com/help/settings/custom-emoji.html>`__ if the emoji you want to use doesn't exist.
 
 ``:smile: :+1: :sheep:``
 
 Renders as:
 
 .. image:: ../../images/Emoji1.PNG
+   :alt: Sample Emoji
 
 Text Style
 ----------
@@ -26,8 +29,10 @@ You can use either ``_`` or ``*`` around a word to make it italic. Use two to ma
 
 .. |bold_italics| image:: ../../images/bold_italics.PNG
   :width: 100px
+  :alt: Bold Italics
 .. |strikethrough| image:: ../../images/strikethrough.PNG
   :width: 100px
+  :alt: Strike Through
 
 Links
 -----
@@ -36,7 +41,7 @@ Create labeled links by putting the desired text in square brackets and the asso
 
 ``[Check out Mattermost!](https://about.mattermost.com/)``
 
-Renders as: `Check out Mattermost! <https://about.mattermost.com/>`_
+Renders as: `Check out Mattermost! <https://about.mattermost.com/>`__
 
 Headings
 --------
@@ -52,6 +57,7 @@ Make a heading by typing # and a space before your title. For smaller headings, 
 Renders as:
 
 .. image:: ../../images/Headings1.PNG
+   :alt: Large Heading
 
 Alternatively, you can underline the text using ``===`` or ``---`` to create headings.
 
@@ -63,6 +69,7 @@ Alternatively, you can underline the text using ``===`` or ``---`` to create hea
 Renders as:
 
 .. image:: ../../images/Headings2.PNG
+   :alt: Smaller Heading
 
 Lists
 -----
@@ -122,6 +129,7 @@ Make a task list by including square brackets:
 Renders as:
 
 .. image:: ../../images/checklist.PNG
+   :alt: List
 
 Code Block
 ----------
@@ -158,7 +166,23 @@ This can be accomplished in one of two ways:
 To add syntax highlighting, type the language to be highlighted after the ``````` at the beginning of the code block. Mattermost also offers four different code themes (GitHub, Solarized Dark, Solarized Light, Monokai) that can be changed in **Account Settings** > **Display** > **Theme** > **Custom Theme** > **Center Channel Styles**
 
 Supported languages are:
-``actionscript``, ``applescript``, ``bash``, ``clojure``, ``coffeescript``, ``cpp``, ``cs``, ``css``, ``d``, ``dart``, ``delphi``, ``diff``, ``django``, ``dockerfile``, ``erlang``, ``fortran``, ``fsharp``, ``gcode``, ``go``, ``groovy``, ``handlebars``, ``haskell``, ``haxe``, ``java``, ``javascript``, ``json``, ``julia``, ``kotlin``, ``less``, ``lisp``, ``lua``, ``makefile``, ``markdown``, ``matlab``, ``objectivec``, ``ocaml``, ``perl``, ``php``, ``powershell``, ``puppet``, ``python``, ``r``, ``ruby``, ``rust``, ``scala``, ``scheme``, ``scss``, ``smalltalk``, ``sql``, ``swift``, ``tex``, ``vbnet``, ``vbscript``, ``verilog``, ``xml``, ``yaml``
+``applescript``, ``as``, ``atom``, ``bas``, ``bash``, ``boot``, ``_coffee``, ``c++``, 
+``c``, ``cake``, ``cc``, ``cl2``, ``clj``, ``cljc``, ``cljs``, ``cljs.hl``,
+``cljscm``, ``cljx``, ``cjsx``, ``cson``, ``coffee``, ``cpp``, ``cs``, ``csharp``, 
+``css``, ``d``, ``dart``, ``dfm``, ``di``, ``delphi``, ``diff``, ``django``, ``docker``, 
+``dockerfile``, ``dpr``, ``erl``, ``fortran``, ``freepascal``,  ``fs``, ``fsharp``, 
+``gcode``, ``gemspec``, ``go``, ``groovy``, ``gyp``, ``h++``, ``h``, 
+``handlebars``, ``hbs``, ``hic``,  ``hpp``, ``html``, ``html.handlebars``, 
+``html.hbs``, ``hs``, ``hx``, ``iced``, ``irb``,
+``java``, ``jinja``, ``jl``, ``js``, ``json``, ``jsp``, ``jsx``, ``kt``,
+``ktm``, ``kts``, ``lazarus``, ``less``, ``lfm``, ``lisp``, ``lpr``,
+``lua``, ``m``, ``mak``, ``matlab``, ``md``, ``mk``, ``mkd``, ``mkdown``,
+``ml``, ``mm``, ``nc``, ``objc``, ``obj-c``, ``osascript``, ``pas``, ``pascal``,
+``perl``, ``php``, ``php3``, ``php4``, ``php5``, ``php6``, ``pl``, ``plist``,
+``podspec``, ``ps``, ``ps1``, ``pp``, ``py``, ``r``, ``rb``,
+``rs``, ``rss``, ``ruby``, ``scala``, ``scm``, ``scpt``, ``scss``, ``sh``, ``sld``, ``st``, ``styl``,
+``sql``, ``swift``, ``tex``, ``thor``, ``ts``, ``tsx``, ``v``, ``vb``, ``vbnet``, ``vbs``,
+``veo``, ``xhtml``, ``xml``, ``xsl``, ``yaml``, ``zsh``,
 
 Example:
 
@@ -178,19 +202,22 @@ Renders as:
 **GitHub Theme**
 
 .. image:: ../../images/syntax-highlighting-github.PNG
+   :alt: Syntax Highlighting in GitHub
 
 **Solarized Dark Theme**
 
 .. image:: ../../images/syntax-highlighting-sol-dark.PNG
+   :alt: Syntax Highlighting Dark
 
 **Solarized Light Theme**
 
 .. image:: ../../images/syntax-highlighting-sol-light.PNG
+   :alt: Syntax Highlighting Light
 
 **Monokai Theme**
 
 .. image:: ../../images/syntax-highlighting-monokai.PNG
-
+   :alt: Syntax Highlighting Monokai
 
 In-line Code
 ------------
@@ -228,9 +255,9 @@ Inline image with hover text
 
   Renders as:
 
-  .. raw:: html
-
-    <img src="../../_images/icon-76x76.png" alt="Mattermost" title="Mattermost Icon"></a>
+  .. image:: ../../images/icon-76x76.png
+    :alt: Mattermost
+    :name: Mattermost Icon
 
 Inline image with link
   Note the extra set of square brackets.
@@ -242,8 +269,8 @@ Inline image with link
   Renders as:
 
   .. image:: ../../images/icon-76x76.png
-    :alt: Mattermost
     :target: https://github.com/mattermost/mattermost-server
+   
 
 Inline image displayed at 50 pixels wide and 76 pixels high
   .. code-block:: none
@@ -252,9 +279,9 @@ Inline image displayed at 50 pixels wide and 76 pixels high
 
   Renders as:
 
-  .. raw:: html
-
-    <img alt="Mattermost" src="../../_images/icon-50x76.png" title="Mattermost Icon">
+  .. image:: ../../images/icon-50x76.png
+    :alt: Mattermost
+    :name: Mattermost Icon 
 
 Inline image displayed at 50 pixels wide and the height adjusted to suit
   .. code-block:: none
@@ -263,9 +290,10 @@ Inline image displayed at 50 pixels wide and the height adjusted to suit
 
   Renders as:
 
-  .. raw:: html
-
-    <img src="../../_images/icon-76x76.png" alt="Mattermost" width="50px" title="Mattermost Icon"></a>
+  .. image:: ../../images/icon-76x76.png
+    :alt: Mattermost
+    :width: 50
+    
 
 Lines
 -----
@@ -274,7 +302,7 @@ Create a line by using three ``*``, ``_``, or ``-``.
 
 ``***``
 
-renders as:
+Renders as:
 
 ---------------------------------------------------------------------------
 
@@ -304,12 +332,15 @@ Create a table by placing a dashed line under the header row and separating the 
 Renders as:
 
 .. image:: ../../images/markdownTable1.PNG
+   :alt: Markdown Table Sample
 
 
 Math Formulas
 -------------
 
-Create formulas by using LaTeX in a ``latex`` `Code Block`_
+Create formulas by using LaTeX in a ``latex`` `Code Block`_. 
+
+Note: This feature is `disabled by default <https://docs.mattermost.com/administration/config-settings.html#enable-latex-rendering>`_. Contact your System Admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
 
 .. code-block:: none
 
@@ -321,3 +352,4 @@ Create formulas by using LaTeX in a ``latex`` `Code Block`_
 Renders as:
 
 .. image:: ../../images/markdownMath.PNG
+   :alt: Markdown Math Sample

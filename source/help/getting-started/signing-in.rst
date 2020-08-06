@@ -8,6 +8,11 @@ To sign in, navigate to the Mattermost sign-in page. You can get the URL of the 
 After signing in, the team that appears first on your team sidebar will open.  If you have not joined a team, the Team Selection
 page opens where you can view a list of teams that you can join.
 
+.. contents::
+  :depth: 2
+  :local:
+  :backlinks: entry
+
 Sign In Methods
 ---------------
 
@@ -49,7 +54,7 @@ account using a one-click sign in option.
   :width: 239px
   :height: 232px
 
-Office 365 Single Sign-On (Beta)
+Office 365 Single Sign-On
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
 
@@ -62,7 +67,7 @@ account using a one-click sign in option.
 
 AD/LDAP Sign In
 ~~~~~~~~~~~~~~~
-*Available in Enterprise Edition E10 & E20*
+*Available in Enterprise Edition E10 and E20*
 
 When enabled by your System Admin, you can sign in with your AD/LDAP
 credentials. This lets you use the same username and password for
@@ -99,12 +104,25 @@ that appears left of your channel list on the left-hand sidebar.
 
 Setting Your Status
 -------------------
-You can set your status as online, away, do not disturb, or offline by selecting a status from the menu that appears when you click your avatar at the top of the channel list. Do not disturb disables desktop and push notifications.
+You can set your status as online, away, do not disturb, or offline by selecting a status from the menu that appears when you click your avatar at the top of the channel list. Do not disturb disables desktop, email and push notifications.
 
 .. image:: ../../images/avatar-online-status-218x247.png
   :width: 239px
   :height: 232px
   :alt: Image of avatar showing the status selection menu with the options online, away, and offline
+
+How Mattermost determines your status
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. csv-table::
+    :header: "Client", "**Online**", "**Away**", "**Offline**"
+
+    "**Desktop App**", "You're interacting with your computer", "You're inactive on your computer for 5 minutes", "You close Mattermost, sleep or lock your computer"
+    "**Web Browser**", "You're interacting with Mattermost in a browser", "
+    - You have not typed or switched channels for 5 minutes
+    - The tab is unfocused for 5 minutes
+    - The browser is in the background or minimized for 5 minutes", "You close the Mattermost browser window"
+    "**Mobile App**", "Mattermost is open", "Mattermost is open with 5 minutes of inactivity", "You switch apps, close Mattermost, or lock your screen" 
 
 Logging Out
 -----------

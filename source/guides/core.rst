@@ -13,14 +13,12 @@ Development Process
    :maxdepth: 2
    :glob:
 
-   /process/overview*
-   /process/release-process*
-   /process/mobile-release*
-   /process/deprecated-features*
-   /developer/style*
-   /developer/fx*
-   /developer/localization*
-   /process/definitions*
+This section has moved to the `Mattermost Handbook <https://handbook.mattermost.com/operations/research-and-development/product/development-process>`__.
+   
+Release Process
+-------------------
+
+This section has moved to the `Mattermost Handbook <https://handbook.mattermost.com/operations/research-and-development/product/release-process>`__.
 
 Community Process
 -------------------
@@ -33,15 +31,24 @@ Community Process
    /process/community-systems*
    /process/help-wanted*
    /process/community-guidelines*
+   /process/how-to-run-a-hackathon*
 
-Core Developer Handbook
--------------------
+Product Management Handbook
+------------------------------
 .. toctree::
    :maxdepth: 2
    :glob:
 
-   /developer/core-developer-handbook*
+This section has moved to the `Mattermost Handbook <https://handbook.mattermost.com/operations/research-and-development/product/product-management-team-handbook>`__.
+
+Core Developer Handbook
+-----------------------
+.. toctree::
+   :maxdepth: 2
+   :glob:
+
    /process/support*
+   /process/engineer-expectations*
 
 Documentation Style Guide
 -------------------------
@@ -51,6 +58,7 @@ Documentation Style Guide
    :glob:
    
    /process/documentation-guidelines*
+   /process/documentation-UItext-guidelines*
 
 Joining the Team 
 -------------------------
@@ -62,6 +70,7 @@ Joining the Team
    /process/handbook*
    /process/working-at-mattermost*
    /process/security*
+   /process/security-release*
    /process/training*
    /process/people-ops*
    /process/developer*
@@ -73,11 +82,7 @@ Marketing
    :maxdepth: 2
    :glob:
 
-   /process/casestudy*
-   /process/guest-article*
-   /process/marketing-guidelines*
-   /process/asset-guidelines*
-   /process/end-user-documentation*
+This section has moved to the `Mattermost Handbook <https://handbook.mattermost.com/operations/messaging-and-math>`__.
 
    
 Partners
@@ -90,4 +95,4 @@ Partners
    /process/partner-programs*
 
 
-**Credits:** Our culture and process draws from the fantastic work of `Wordpress <https://wordpress.org/about/philosophy/>`_, `GitLab <https://gitlab.com/gitlab-com/www-gitlab-com/tree/master/source/handbook>`_, `Pixar <https://www.amazon.com/Creativity-Inc-Overcoming-Unseen-Inspiration/dp/0812993012>`_ and `Intel <https://www.amazon.com/High-Output-Management-Andrew-Grove/dp/0679762884/ref=sr_1_1?s=books&ie=UTF8&qid=1481613210&sr=1-1&keywords=high+output+management>`_ in different ways. 
+**Credits:** Our culture and process draws from the fantastic work of `Wordpress <https://wordpress.org/about/philosophy/>`__, `GitLab <https://gitlab.com/gitlab-com/www-gitlab-com/tree/master/source/handbook>`__, `Pixar <https://www.amazon.com/Creativity-Inc-Overcoming-Unseen-Inspiration/dp/0812993012>`__ and `Intel <https://www.amazon.com/High-Output-Management-Andrew-Grove/dp/0679762884/ref=sr_1_1?s=books&ie=UTF8&qid=1481613210&sr=1-1&keywords=high+output+management>`__ in different ways. 

@@ -5,12 +5,12 @@ Bulk Loading Data
 =================
 
 Large quantities of data can be imported from a `JSONL
-<http://jsonlines.org>`_ file into Mattermost at the command line using the bulk loading feature. This feature is most suitable for migrating data from an existing messaging system, or for pre-populating a new installation with data.
+<http://jsonlines.org>`__ file into Mattermost at the command line using the bulk loading feature. This feature is most suitable for migrating data from an existing messaging system, or for pre-populating a new installation with data.
 
 You can import the following data types:
 
 - Teams
-- Channels (Public & Private)
+- Channels (Public and Private)
 - Users
 - Users' Team memberships
 - Users' Channel memberships
@@ -21,6 +21,7 @@ You can import the following data types:
 - Posts' File Attachments
 - Direct Message and Group Message channels
 - Direct Messages and Group Messages
+- Direct Messages from a user to themselves
 - Permissions Schemes
 - Custom Emoji
 
@@ -34,3 +35,4 @@ Importing additional types of posts is not yet supported.
 .. include:: bulk-loading-about.rst
 .. include:: bulk-loading-data.rst
 .. include:: bulk-loading-data-format.rst
+.. include:: bulk-loading-troubleshooting.rst

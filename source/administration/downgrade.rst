@@ -6,7 +6,7 @@ In most cases you can downgrade Mattermost Server using the same steps as :doc:`
 Downgrade from 5.0 to 4.10
 ---------------------------
 
-During the version 5.0 upgrade process, a migration is run to enable new features of the `advanced permissions system <https://docs.mattermost.com/deployment/advanced-permissions.html>`_. This changes the database in ways that result in it no longer being compatible with Mattermost server 4.10. If you need to downgrade from 5.0 or later to 4.10, it is necessary to follow the steps below.
+During the version 5.0 upgrade process, a migration is run to enable new features of the `advanced permissions system <https://docs.mattermost.com/deployment/advanced-permissions.html>`__. This changes the database in ways that result in it no longer being compatible with Mattermost server 4.10. If you need to downgrade from 5.0 or later to 4.10, it is necessary to follow the steps below.
 
 You should gather the following information before starting the upgrade:
 
@@ -25,13 +25,13 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
 #. Stop Mattermost Server.
 
-   On Ubuntu 14.04 and RHEL 6.6:
+   On Ubuntu 14.04 and RHEL 6:
 
    .. code-block:: sh
 
      sudo service mattermost stop
 
-   On Ubuntu 16.04 and RHEL 7.1:
+   On Ubuntu 16.04 and RHEL 7:
 
    .. code-block:: sh
 
@@ -72,13 +72,13 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
 #. Start Mattermost server.
 
-   On Ubuntu 14.04 and RHEL 6.6:
+   On Ubuntu 14.04 and RHEL 6:
 
    .. code-block:: sh
 
      sudo service mattermost start
 
-   On Ubuntu 16.04 and RHEL 7.1:
+   On Ubuntu 16.04 and RHEL 7:
 
    .. code-block:: sh
 

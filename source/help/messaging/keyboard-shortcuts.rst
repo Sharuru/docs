@@ -1,9 +1,13 @@
 Keyboard Shortcuts
 ------------------
 
-Keyboard shortcuts perform operations in Mattermost to help you navigate through channels and make a more efficient use of your keyboard. See also `slash commands <http://docs.mattermost.com/help/messaging/executing-commands.html>`_ for alternate ways to help carry out actions with a keyboard instead of a mouse.
+Keyboard shortcuts perform operations in Mattermost to help you navigate through channels and make a more efficient use of your keyboard. See also `slash commands <http://docs.mattermost.com/help/messaging/executing-commands.html>`__ for alternate ways to help carry out actions with a keyboard instead of a mouse.
 
 To display a list of available keyboard shortcuts, type CTRL+/ (CMD+/ on Mac), or ``/shortcuts``.
+
+.. note::
+
+   Though Mattermost keyboard shortcuts support standard languages and keyboard layouts, they may not work if you use keymapping that overwrites default browser shortcuts.
 
 Navigation
 ==========
@@ -11,13 +15,19 @@ Navigation
 +----------------------------------------+----------------------------------------+------------------------------------------------------------------------------+
 | On Windows                             | On Mac                                 | Description                                                                  |
 +========================================+========================================+==============================================================================+
-| ALT+UP                                 | ALT+UP                                 | Previous channel or direct message in left hand sidebar                      |
+| ALT+UP                                 | OPTION+UP                              | Previous channel or direct message in left hand sidebar                      |
 +----------------------------------------+----------------------------------------+------------------------------------------------------------------------------+
-| ALT+DOWN                               | ALT+DOWN                               | Next channel or direct message in left hand sidebar                          |
+| ALT+DOWN                               | OPTION+DOWN                            | Next channel or direct message in left hand sidebar                          |
 +----------------------------------------+----------------------------------------+------------------------------------------------------------------------------+
-| ALT+SHIFT+UP                           | ALT+SHIFT+UP                           | Previous channel or direct message in left hand sidebar with unread messages |
+| ALT+SHIFT+UP                           | OPTION+SHIFT+UP                        | Previous channel or direct message in left hand sidebar with unread messages |
 +----------------------------------------+----------------------------------------+------------------------------------------------------------------------------+
-| ALT+SHIFT+DOWN                         | ALT+SHIFT+DOWN                         | Next channel or direct message in left hand sidebar with unread messages     |
+| ALT+SHIFT+DOWN                         | OPTION+SHIFT+DOWN                      | Next channel or direct message in left hand sidebar with unread messages     |
++----------------------------------------+----------------------------------------+------------------------------------------------------------------------------+
+| CTRL+ALT+UP                            | CMD+OPTION+UP                          | Previous team                                                                |
++----------------------------------------+----------------------------------------+------------------------------------------------------------------------------+
+| CTRL+ALT+DOWN                          | CMD+OPTION+DOWN                        | Next team                                                                    |
++----------------------------------------+----------------------------------------+------------------------------------------------------------------------------+
+| CTRL+ALT+[1-9]                         | CMD+OPTION+[1-9]                       | Switch to a specific team                                                    |
 +----------------------------------------+----------------------------------------+------------------------------------------------------------------------------+
 | CTRL+K                                 | CMD+K                                  | Open a quick channel switcher dialog                                         |
 +----------------------------------------+----------------------------------------+------------------------------------------------------------------------------+
@@ -29,6 +39,12 @@ Navigation
 +----------------------------------------+----------------------------------------+------------------------------------------------------------------------------+
 | CTRL+SHIFT+L                           | CMD+SHIFT+L                            | Set focus to center channel input field                                      |
 +----------------------------------------+----------------------------------------+------------------------------------------------------------------------------+
+| CTRL+.                                 | CMD+.                                  | Open and close the Right-Hand Sidebar                                        |
++----------------------------------------+----------------------------------------+------------------------------------------------------------------------------+
+
+
+
+Additional navigation keyboard shortcuts for screen reader users can be found `here <https://docs.mattermost.com/help/getting-started/accessibility.html>`_.
 
 Files
 =====
@@ -59,6 +75,9 @@ Messages
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------------------+
 | :[character]+TAB                       | :[character]+TAB                       | Autocomplete emoji beginning with [character]                              |
 +----------------------------------------+----------------------------------------+----------------------------------------------------------------------------+
+| CTRL+SHIFT+\\                          |  CMD+SHIFT+\\                          | React to last message in channel or thread            |
++----------------------------------------+----------------------------------------+----------------------------------------------------------------------------+
+
 
 Browser Built-in
 ================

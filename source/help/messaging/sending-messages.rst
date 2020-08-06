@@ -13,7 +13,10 @@ Write a message by typing into the text input box, then press ENTER to send it. 
 Replying to Messages
 ---------------------
 
-Click the reply link (arrow icon) next to any message. This keeps conversations organized in threads. Replies are indented slightly in the center pane to indicate that they are child messages of a parent message.
+Hover over any message and click the reply link (arrow icon |replyarrow|). This organizes the conversation into a thread. Replies are indented slightly in the center pane to indicate that they are child messages of a parent message.
+
+.. |replyarrow| image:: ../../images/replyIcon.PNG
+   :alt: reply arrow
 
 Clicking the reply link will open a sidebar on the right-hand side. To expand the right-hand sidebar to its full width, click the expand/shrink icon with two arrows at the top of the sidebar. To shrink the right-hand sidebar to its original width, click the same expand/shrink icon.
 
@@ -25,14 +28,14 @@ Click the **[...]** link next to a message that you have sent, then click **Edit
 .. note::
   Message edits do not trigger new @mention notifications, desktop notifications, or notification sounds.
 
-Your System Admin `can disable the **Edit** feature or set a time limit <https://docs.mattermost.com/administration/config-settings.html?highlight=config%20settings#allow-users-to-edit-their-messages>`_ before messages become uneditable, available in Mattermost Enterprise Edition E10 and E20.
+Your System Admin `can disable the **Edit** feature or set a time limit <https://docs.mattermost.com/administration/config-settings.html?highlight=config%20settings#allow-users-to-edit-their-messages>`__ before messages become uneditable, available in Mattermost Enterprise Edition E10 and E20.
 
 Deleting Messages
 ------------------
 
 Click the **[...]** link next to a message that you have sent, then click **Delete**.
 
-Your System Admin can `disable the **Delete** feature <https://docs.mattermost.com/administration/config-settings.html?highlight=config%20settings#allow-which-users-to-delete-messages>`_, available in Mattermost Enterprise Edition E10 and E20.
+Your System Admin can `disable the **Delete** feature <https://docs.mattermost.com/administration/config-settings.html?highlight=config%20settings#allow-which-users-to-delete-messages>`__, available in Mattermost Enterprise Edition E10 and E20.
 
 Linking to Messages
 --------------------
@@ -43,3 +46,10 @@ If the link is to a message in a Public Channel, any member of the team can see 
 
 .. tip::
   The timestamp that appears beside the username of any message is also a permalink.
+
+Marking Messages as Unread
+--------------------------
+
+Marking a message as unread will bold the channel in your sidebar and add the new messages line above the marked message. This can be a useful reminder to follow-up on the message later if you don't have time to address it when the message was read.
+
+Click the **[...]** menu next to a message, then click **Mark as Unread**.
